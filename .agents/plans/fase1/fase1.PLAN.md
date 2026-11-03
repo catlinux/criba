@@ -1,4 +1,4 @@
-# Fase 1 – Escáner de lectura
+﻿# Fase 1 – Escáner de lectura
 
 Objetivo: informe de espacio recuperable (archivos grandes, descargas y APKs viejos, capturas, carpetas huérfanas). **Solo lectura: ningún código de esta fase borra, mueve ni modifica archivos.** Reglas en `CLAUDE.md`.
 
@@ -6,7 +6,7 @@ Diseño: los escáneres viven en `domain`, son Kotlin puro y leen de interfaces 
 
 Pasos (ejecutor por defecto: AgentRelay, esfuerzo medio; revisa la sesión principal):
 
-1. [ ] **LargeFilesScanner (domain)** · `ScanFile`, `FileSource`, `ScanResult`, `LargeFilesScanner` + tests. Versión 0.2.0.
+1. [x] **LargeFilesScanner (domain)** · `ScanFile`, `FileSource`, `ScanResult`, `LargeFilesScanner` + tests. Versión 0.2.0.
 2. [ ] **MediaStoreFileSource (data)** · implementa `FileSource` con MediaStore (Downloads, Images, Video, Audio, Files), binding Hilt, solicitud de permisos de lectura mínimos. Probar en dispositivo real (no verificable por tests unitarios). 0.3.0.
 3. [ ] **Descargas y APKs viejos** · escáner sobre `FileSource`; APKs instalados detectados con `PackageManager` tras una interfaz. 0.4.0.
 4. [ ] **Capturas de pantalla** · agrupadas por antigüedad. 0.5.0.

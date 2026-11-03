@@ -2,7 +2,7 @@
 
 Limpiador de almacenamiento para Android, seguro y sin publicidad. Encuentra archivos grandes, duplicados y apps sin uso, y verifica una copia de seguridad antes de borrar nada.
 
-> **Estado: Fase 0 (base del proyecto).** La app todavía no analiza ni borra nada: solo muestra el espacio real del almacenamiento interno. Ver [docs/ROADMAP.md](docs/ROADMAP.md).
+> **Estado: Fase 1 en curso (escáner de lectura).** Ya existe un escáner de archivos grandes en `domain`, pero todavía no tiene interfaz: la app solo muestra el espacio real del almacenamiento interno. Ver [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Filosofía
 

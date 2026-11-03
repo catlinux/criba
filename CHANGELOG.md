@@ -4,6 +4,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 
 ## [Sin publicar]
 
+## [0.2.0] - 2026-11-03
+
+### Añadido
+
+- LargeFilesScanner (solo lectura) y modelos ScanFile, FileSource y ScanResult en domain.
+
 ## [0.1.0] - 2026-11-03
 
 ### Añadido
