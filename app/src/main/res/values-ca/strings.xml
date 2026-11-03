@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Criba</string>
+    <string name="home_title">Emmagatzematge</string>
+    <string name="home_free">Lliure: %1$s de %2$s</string>
+    <string name="home_used">Usat: %1$s</string>
+    <string name="home_note">Criba encara no analitza res. Escanejar mai esborra: el mode per defecte és només lectura.</string>
+</resources>

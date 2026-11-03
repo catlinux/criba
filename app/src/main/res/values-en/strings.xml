@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Criba</string>
+    <string name="home_title">Storage</string>
+    <string name="home_free">Free: %1$s of %2$s</string>
+    <string name="home_used">Used: %1$s</string>
+    <string name="home_note">Criba does not scan anything yet. Scanning never deletes: the default mode is read-only.</string>
+</resources>
