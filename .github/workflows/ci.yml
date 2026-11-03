@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Tests unitarios, lint y build
+        run: ./gradlew testDebugUnitTest lintDebug assembleDebug assembleRelease
+
+      - name: Comprobar que no se declara INTERNET
+        run: |
+          if grep -q 'android.permission.INTERNET' app/build/intermediates/merged_manifests/release/processReleaseManifest/AndroidManifest.xml; then
+            echo "El manifiesto declara INTERNET: Criba no debe usar red." >&2
+            exit 1
+          fi
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: informes
+          path: |
+            app/build/reports/
+            app/build/test-results/
