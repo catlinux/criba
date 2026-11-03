@@ -4,6 +4,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 
 ## [Sin publicar]
 
+## [0.4.0] - 2026-11-03
+
+### Añadido
+
+- isProtected(path) (rutas protegidas) y escáneres de solo lectura OldDownloadsScanner y OldApksScanner en domain.
+
 ## [0.3.0] - 2026-11-03
 
 ### Añadido

@@ -1,8 +1,5 @@
 package io.github.catlinux.criba.domain
 
-import kotlin.coroutines.Continuation
-import kotlin.coroutines.EmptyCoroutineContext
-import kotlin.coroutines.startCoroutine
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertThrows
 import org.junit.Test
@@ -18,20 +15,6 @@ class LargeFilesScannerTest {
         )
 
     private fun source(vararg files: ScanFile) = FileSource { files.toList() }
-
-    private fun <T> runSuspend(block: suspend () -> T): T {
-        var outcome: Result<T>? = null
-        block.startCoroutine(
-            object : Continuation<T> {
-                override val context = EmptyCoroutineContext
-
-                override fun resumeWith(result: Result<T>) {
-                    outcome = result
-                }
-            },
-        )
-        return requireNotNull(outcome) { "la corrutina no terminó de forma síncrona" }.getOrThrow()
-    }
 
     @Test
     fun `incluye el archivo que iguala el umbral`() = runSuspend {
