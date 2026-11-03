@@ -32,6 +32,9 @@ Escáneres como casos de uso independientes y testeables: `LargeFilesScanner`, `
 | Copias de seguridad de Android | `allowBackup=false` y reglas de extracción vacías | La app no guarda datos que deban salir del dispositivo |
 | Distribución | GitHub Releases, APK firmado | Decisión del mantenedor |
 
+| Acceso a Descargas | `MANAGE_EXTERNAL_STORAGE` (aprobado el 2026-11-03), solo lectura de momento | En Android 10+ MediaStore no devuelve a una app normal los archivos no multimedia (APKs, zips, documentos) de Descargas, y SAF no permite elegir la carpeta Descargas en Android 11+ |
+| Rutas | Toda ruta pasa por `isProtected(path)` (domain) antes de analizarse o tocarse | Regla de seguridad 4 |
+
 ## Pendiente de decidir
 
 - Papelera propia frente a papelera nativa (`MediaStore.createTrashRequest` solo aplica a medios del propio `MediaStore`; hay que comprobar el comportamiento por versión y fabricante en dispositivo real).

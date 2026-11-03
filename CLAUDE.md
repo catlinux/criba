@@ -22,7 +22,7 @@ No acelera el móvil, no «limpia la RAM», no mata procesos y no muestra MB de 
 3. Confirmación explícita del usuario antes de toda acción destructiva, mostrando qué archivos y cuántos MB reales.
 4. Lista protegida: jamás tocar archivos de sistema, `Android/data` ni `Android/obb` de otras apps, bases de datos, claves, ni carpetas no elegidas por el usuario. Toda ruta nueva pasa por la función central `isProtected(path)`, con tests.
 5. Multimedia: no se propone borrar sin copia verificada (SHA-256 íntegro en un destino elegido por el usuario). No fingir comprobación de Google Fotos: ofrecer (a) copia propia verificada o (b) confirmación manual guiada.
-6. Permisos mínimos: `MediaStore`, `StorageStatsManager`, `UsageStatsManager` (acceso a uso concedido por el usuario) y el selector de carpetas SAF. No pedir `MANAGE_EXTERNAL_STORAGE` sin decisión explícita del mantenedor.
+6. Permisos mínimos: `MediaStore`, `StorageStatsManager`, `UsageStatsManager` (acceso a uso concedido por el usuario) y el selector de carpetas SAF. `MANAGE_EXTERNAL_STORAGE` solo con decisión explícita del mantenedor: el 2026-11-03 la aprobó, únicamente para leer Descargas (APKs, zips, documentos, que MediaStore no muestra a una app normal). Se pide solo cuando el usuario lo inicia y con una explicación; hasta la Fase 2 se usa solo para leer.
 7. Registro local auditable de cada acción (qué, cuándo, resultado), con deshacer.
 8. Segundo plano: Criba solo informa y guía a ajustes del sistema; nunca automatiza cerrar apps, restringir batería ni desinstalar.
 

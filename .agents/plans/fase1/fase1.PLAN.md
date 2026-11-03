@@ -8,9 +8,10 @@ Pasos (ejecutor por defecto: AgentRelay, esfuerzo medio; revisa la sesión princ
 
 1. [x] **LargeFilesScanner (domain)** · `ScanFile`, `FileSource`, `ScanResult`, `LargeFilesScanner` + tests. Versión 0.2.0.
 2. [x] **MediaStoreFileSource (data)** · implementa `FileSource` con MediaStore (Downloads, Images, Video, Audio, Files), binding Hilt, solicitud de permisos de lectura mínimos. Probar en dispositivo real (no verificable por tests unitarios). 0.3.0.
-3. [ ] **Descargas y APKs viejos** · escáner sobre `FileSource`; APKs instalados detectados con `PackageManager` tras una interfaz. 0.4.0.
-4. [ ] **Capturas de pantalla** · agrupadas por antigüedad. 0.5.0.
-5. [ ] **Carpetas huérfanas** · carpetas elegidas por el usuario con SAF; nunca `Android/data` ni `Android/obb` de otras apps. 0.6.0.
-6. [ ] **Informe de espacio recuperable (ui)** · pantalla con cifras medidas y sin botón de borrar. 0.7.0.
+3. [ ] **isProtected + escáneres de Descargas y APKs (domain)** · `isProtected(path)` con tests (Android/data, Android/obb, sistema, bases de datos, claves), `OldDownloadsScanner` y `OldApksScanner` sobre `FileSource` e interfaces. 0.4.0.
+4. [ ] **Acceso a Descargas (data + ui)** · `MANAGE_EXTERNAL_STORAGE` (aprobado), `DownloadsFileSource` con `java.io.File` (solo lectura, pasando por `isProtected`), detección de APKs con `PackageManager`, flujo de permiso y resultados en la pantalla. Probar en Pixel. 0.5.0.
+5. [ ] **Capturas de pantalla** · agrupadas por antigüedad. 0.6.0.
+6. [ ] **Carpetas huérfanas** · carpetas elegidas por el usuario con SAF; nunca `Android/data` ni `Android/obb` de otras apps. 0.7.0.
+7. [ ] **Informe de espacio recuperable (ui)** · pantalla con cifras medidas y sin botón de borrar. 0.8.0.
 
 Imprevistos de diseño: el ejecutor se para y los anota aquí.
