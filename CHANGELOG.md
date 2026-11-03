@@ -4,6 +4,16 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 
 ## [Sin publicar]
 
+## [0.8.0] - 2026-11-03
+
+### Añadido
+
+- Pantalla «Informe de espacio recuperable» con total sin duplicados entre categorías.
+
+### Cambiado
+
+- Las búsquedas pasan de la pantalla inicial al informe; los textos con recuento usan plurales correctos.
+
 ## [0.7.0] - 2026-11-03
 
 ### Añadido

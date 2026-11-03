@@ -7,7 +7,6 @@
     <string name="home_note">Criba only counts files. Scanning never deletes: the default mode is read-only.</string>
     <string name="scan_button">Find large files</string>
     <string name="scan_running">Looking for large files…</string>
-    <string name="scan_result">%1$d files of 100 MB or more take up %2$s</string>
     <string name="scan_empty">No files of 100 MB or more</string>
     <string name="scan_permission_denied">Without media read permission, photos, videos and audio cannot be analysed.</string>
     <string name="scan_error">The files could not be analysed. Try again.</string>
@@ -15,25 +14,68 @@
     <string name="downloads_explanation">To see APKs, zips and documents in Downloads, Android requires the «All files access» permission. Criba only uses it to read and never deletes anything.</string>
     <string name="downloads_button">Search Downloads</string>
     <string name="downloads_running">Searching Downloads…</string>
-    <string name="downloads_old_result">%1$d files older than 90 days in Downloads take up %2$s</string>
     <string name="downloads_old_empty">No files older than 90 days in Downloads</string>
-    <string name="downloads_apk_result">%1$d APKs (already installed or older than 30 days) take up %2$s</string>
     <string name="downloads_apk_empty">No installed APKs or APKs older than 30 days</string>
     <string name="downloads_access_denied">Without all files access, Downloads cannot be read. You can grant it in the system settings.</string>
     <string name="downloads_error">Downloads could not be analysed. Try again.</string>
     <string name="screenshots_button">Find screenshots</string>
     <string name="screenshots_running">Looking for screenshots…</string>
-    <string name="screenshots_bucket_30_90">%1$d screenshots between 30 and 90 days old take up %2$s</string>
-    <string name="screenshots_bucket_90_365">%1$d screenshots between 90 days and 1 year old take up %2$s</string>
-    <string name="screenshots_bucket_365">%1$d screenshots more than 1 year old take up %2$s</string>
-    <string name="screenshots_total">In total, %1$d screenshots take up %2$s</string>
     <string name="screenshots_empty">No screenshots older than 30 days</string>
     <string name="screenshots_error">The screenshots could not be analysed. Try again.</string>
     <string name="folders_explanation">Choose a folder; Criba looks inside it for empty subfolders or subfolders unchanged for more than a year. It only reads and never deletes anything. Android does not allow choosing Downloads or the storage root.</string>
     <string name="folders_button">Choose folder and search</string>
     <string name="folders_running">Analysing the folder…</string>
-    <string name="folders_empty_count">%1$d empty folders</string>
-    <string name="folders_inactive_result">%1$d folders unchanged for more than a year take up %2$s</string>
     <string name="folders_none">No empty or unused folders</string>
     <string name="folders_error">The folder could not be analysed. Try again.</string>
+    <string name="report_title">Recoverable space report</string>
+    <string name="report_open_button">View recoverable space report</string>
+    <string name="report_back">Back</string>
+    <string name="report_summary_none">Nothing analysed yet</string>
+    <string name="report_summary_includes">Includes: %1$s</string>
+    <string name="report_category_large_files">large files</string>
+    <string name="report_category_screenshots">screenshots</string>
+    <string name="report_category_old_downloads">old downloads</string>
+    <string name="report_category_apks">APKs</string>
+    <string name="report_overlap_note">Categories can overlap: the total does not count the same file twice. Empty or unused folders are not included in the total.</string>
+    <string name="report_readonly_note">Criba only reads: it deletes nothing.</string>
+    <plurals name="scan_result">
+        <item quantity="one">%1$d file of 100 MB or more takes up %2$s</item>
+        <item quantity="other">%1$d files of 100 MB or more take up %2$s</item>
+    </plurals>
+    <plurals name="screenshots_bucket_30_90">
+        <item quantity="one">%1$d screenshot between 30 and 90 days old takes up %2$s</item>
+        <item quantity="other">%1$d screenshots between 30 and 90 days old take up %2$s</item>
+    </plurals>
+    <plurals name="screenshots_bucket_90_365">
+        <item quantity="one">%1$d screenshot between 90 days and 1 year old takes up %2$s</item>
+        <item quantity="other">%1$d screenshots between 90 days and 1 year old take up %2$s</item>
+    </plurals>
+    <plurals name="screenshots_bucket_365">
+        <item quantity="one">%1$d screenshot more than 1 year old takes up %2$s</item>
+        <item quantity="other">%1$d screenshots more than 1 year old take up %2$s</item>
+    </plurals>
+    <plurals name="screenshots_total">
+        <item quantity="one">In total, %1$d screenshot takes up %2$s</item>
+        <item quantity="other">In total, %1$d screenshots take up %2$s</item>
+    </plurals>
+    <plurals name="downloads_old_result">
+        <item quantity="one">%1$d file older than 90 days in Downloads takes up %2$s</item>
+        <item quantity="other">%1$d files older than 90 days in Downloads take up %2$s</item>
+    </plurals>
+    <plurals name="downloads_apk_result">
+        <item quantity="one">%1$d APK (already installed or older than 30 days) takes up %2$s</item>
+        <item quantity="other">%1$d APKs (already installed or older than 30 days) take up %2$s</item>
+    </plurals>
+    <plurals name="folders_empty_count">
+        <item quantity="one">%1$d empty folder</item>
+        <item quantity="other">%1$d empty folders</item>
+    </plurals>
+    <plurals name="folders_inactive_result">
+        <item quantity="one">%1$d folder unchanged for more than a year takes up %2$s</item>
+        <item quantity="other">%1$d folders unchanged for more than a year take up %2$s</item>
+    </plurals>
+    <plurals name="report_summary_total">
+        <item quantity="one">Up to %1$s in %2$d file</item>
+        <item quantity="other">Up to %1$s in %2$d files</item>
+    </plurals>
 </resources>

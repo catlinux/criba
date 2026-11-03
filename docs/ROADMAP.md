@@ -5,7 +5,7 @@ Cada fase es una milestone de GitHub con sus issues (ver [ISSUES.md](ISSUES.md))
 | Fase | Contenido | Estado |
 |---|---|---|
 | 0 – Base | Estructura, Gradle con version catalog, CI, licencia GPLv3, README, CLAUDE.md, docs | En curso (PR de bootstrap) |
-| 1 – Escáner de lectura | Archivos grandes, descargas y APKs viejos, capturas, carpetas huérfanas. Informe de espacio recuperable. Sin borrar | Pendiente |
+| 1 – Escáner de lectura | Archivos grandes, descargas y APKs viejos, capturas, carpetas huérfanas. Informe de espacio recuperable. Sin borrar | Completa (solo lectura) |
 | 2 – Papelera y borrado seguro | Papelera, `isProtected`, registro, deshacer | Pendiente |
 | 3 – Apps | Tamaño por app, última vez usada, candidatas a desinstalar | Pendiente |
 | 4 – Duplicados | Hash de contenido (exactos primero; similares después) | Pendiente |

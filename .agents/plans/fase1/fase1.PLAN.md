@@ -12,6 +12,6 @@ Pasos (ejecutor por defecto: AgentRelay, esfuerzo medio; revisa la sesión princ
 4. [x] **Acceso a Descargas (data + ui)** · `MANAGE_EXTERNAL_STORAGE` (aprobado), `DownloadsFileSource` con `java.io.File` (solo lectura, pasando por `isProtected`), detección de APKs con `PackageManager`, flujo de permiso y resultados en la pantalla. Probar en Pixel. 0.5.0.
 5. [x] **Capturas de pantalla** · agrupadas por antigüedad. 0.6.0.
 6. [x] **Carpetas vacías o sin uso (domain + data + ui)** · el usuario elige una carpeta con SAF (`OpenDocumentTree`, sin permiso persistente); se resumen sus subcarpetas directas (archivos, bytes, última modificación) y se marcan vacías o sin cambios en más de un año. Se sustituye «carpetas huérfanas de apps desinstaladas»: sin ver todas las apps instaladas daría falsos positivos y `Android/data` y `Android/obb` son intocables. Toda ruta reconstruida pasa por `isProtected`. 0.7.0.
-7. [ ] **Informe de espacio recuperable (ui)** · pantalla con cifras medidas y sin botón de borrar. 0.8.0.
+7. [x] **Informe de espacio recuperable (ui)** · pantalla con cifras medidas y sin botón de borrar. 0.8.0.
 
 Imprevistos de diseño: el ejecutor se para y los anota aquí.

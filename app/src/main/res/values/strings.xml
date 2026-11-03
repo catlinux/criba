@@ -7,7 +7,6 @@
     <string name="home_note">Criba solo cuenta archivos. Escanear nunca borra: el modo por defecto es solo lectura.</string>
     <string name="scan_button">Buscar archivos grandes</string>
     <string name="scan_running">Buscando archivos grandes…</string>
-    <string name="scan_result">%1$d archivos de 100 MB o más ocupan %2$s</string>
     <string name="scan_empty">No hay archivos de 100 MB o más</string>
     <string name="scan_permission_denied">Sin permiso de lectura de medios no se pueden analizar fotos, vídeos ni audio.</string>
     <string name="scan_error">No se pudieron analizar los archivos. Inténtalo de nuevo.</string>
@@ -15,25 +14,68 @@
     <string name="downloads_explanation">Para ver APKs, zips y documentos de Descargas, Android exige el permiso «Acceso a todos los archivos». Criba solo lo usa para leer y nunca borra nada.</string>
     <string name="downloads_button">Buscar en Descargas</string>
     <string name="downloads_running">Buscando en Descargas…</string>
-    <string name="downloads_old_result">%1$d archivos con más de 90 días en Descargas ocupan %2$s</string>
     <string name="downloads_old_empty">No hay archivos con más de 90 días en Descargas</string>
-    <string name="downloads_apk_result">%1$d APKs (ya instalados o con más de 30 días) ocupan %2$s</string>
     <string name="downloads_apk_empty">No hay APKs ya instalados ni con más de 30 días</string>
     <string name="downloads_access_denied">Sin acceso a todos los archivos no se puede leer Descargas. Puedes concederlo en los ajustes del sistema.</string>
     <string name="downloads_error">No se pudo analizar Descargas. Inténtalo de nuevo.</string>
     <string name="screenshots_button">Buscar capturas de pantalla</string>
     <string name="screenshots_running">Buscando capturas de pantalla…</string>
-    <string name="screenshots_bucket_30_90">%1$d capturas de entre 30 y 90 días ocupan %2$s</string>
-    <string name="screenshots_bucket_90_365">%1$d capturas de entre 90 días y 1 año ocupan %2$s</string>
-    <string name="screenshots_bucket_365">%1$d capturas de más de 1 año ocupan %2$s</string>
-    <string name="screenshots_total">En total, %1$d capturas ocupan %2$s</string>
     <string name="screenshots_empty">No hay capturas de más de 30 días</string>
     <string name="screenshots_error">No se pudieron analizar las capturas. Inténtalo de nuevo.</string>
     <string name="folders_explanation">Elige una carpeta; Criba busca dentro de ella subcarpetas vacías o sin cambios desde hace más de un año. Solo lee y no borra nada. Android no permite elegir Descargas ni la raíz del almacenamiento.</string>
     <string name="folders_button">Elegir carpeta y buscar</string>
     <string name="folders_running">Analizando la carpeta…</string>
-    <string name="folders_empty_count">%1$d carpetas vacías</string>
-    <string name="folders_inactive_result">%1$d carpetas sin cambios en más de un año ocupan %2$s</string>
     <string name="folders_none">No hay carpetas vacías ni sin uso</string>
     <string name="folders_error">No se pudo analizar la carpeta. Inténtalo de nuevo.</string>
+    <string name="report_title">Informe de espacio recuperable</string>
+    <string name="report_open_button">Ver informe de espacio recuperable</string>
+    <string name="report_back">Volver</string>
+    <string name="report_summary_none">Aún no se ha analizado nada</string>
+    <string name="report_summary_includes">Incluye: %1$s</string>
+    <string name="report_category_large_files">archivos grandes</string>
+    <string name="report_category_screenshots">capturas</string>
+    <string name="report_category_old_downloads">descargas antiguas</string>
+    <string name="report_category_apks">APKs</string>
+    <string name="report_overlap_note">Las categorías pueden solaparse: el total no cuenta dos veces el mismo archivo. Las carpetas vacías o sin uso no se incluyen en el total.</string>
+    <string name="report_readonly_note">Criba solo lee: no borra nada.</string>
+    <plurals name="scan_result">
+        <item quantity="one">%1$d archivo de 100 MB o más ocupa %2$s</item>
+        <item quantity="other">%1$d archivos de 100 MB o más ocupan %2$s</item>
+    </plurals>
+    <plurals name="screenshots_bucket_30_90">
+        <item quantity="one">%1$d captura de entre 30 y 90 días ocupa %2$s</item>
+        <item quantity="other">%1$d capturas de entre 30 y 90 días ocupan %2$s</item>
+    </plurals>
+    <plurals name="screenshots_bucket_90_365">
+        <item quantity="one">%1$d captura de entre 90 días y 1 año ocupa %2$s</item>
+        <item quantity="other">%1$d capturas de entre 90 días y 1 año ocupan %2$s</item>
+    </plurals>
+    <plurals name="screenshots_bucket_365">
+        <item quantity="one">%1$d captura de más de 1 año ocupa %2$s</item>
+        <item quantity="other">%1$d capturas de más de 1 año ocupan %2$s</item>
+    </plurals>
+    <plurals name="screenshots_total">
+        <item quantity="one">En total, %1$d captura ocupa %2$s</item>
+        <item quantity="other">En total, %1$d capturas ocupan %2$s</item>
+    </plurals>
+    <plurals name="downloads_old_result">
+        <item quantity="one">%1$d archivo con más de 90 días en Descargas ocupa %2$s</item>
+        <item quantity="other">%1$d archivos con más de 90 días en Descargas ocupan %2$s</item>
+    </plurals>
+    <plurals name="downloads_apk_result">
+        <item quantity="one">%1$d APK (ya instalado o con más de 30 días) ocupa %2$s</item>
+        <item quantity="other">%1$d APKs (ya instalados o con más de 30 días) ocupan %2$s</item>
+    </plurals>
+    <plurals name="folders_empty_count">
+        <item quantity="one">%1$d carpeta vacía</item>
+        <item quantity="other">%1$d carpetas vacías</item>
+    </plurals>
+    <plurals name="folders_inactive_result">
+        <item quantity="one">%1$d carpeta sin cambios en más de un año ocupa %2$s</item>
+        <item quantity="other">%1$d carpetas sin cambios en más de un año ocupan %2$s</item>
+    </plurals>
+    <plurals name="report_summary_total">
+        <item quantity="one">Hasta %1$s en %2$d archivo</item>
+        <item quantity="other">Hasta %1$s en %2$d archivos</item>
+    </plurals>
 </resources>
