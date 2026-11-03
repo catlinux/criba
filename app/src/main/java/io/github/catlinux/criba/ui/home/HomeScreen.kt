@@ -1,14 +1,21 @@
 package io.github.catlinux.criba.ui.home
 
 import android.Manifest
+import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
+import android.os.Environment
+import android.provider.Settings
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
@@ -34,6 +41,7 @@ import io.github.catlinux.criba.domain.ByteFormat
 fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
     val storage = viewModel.storage
     val largeFilesState by viewModel.largeFilesState.collectAsStateWithLifecycle()
+    val downloadsState by viewModel.downloadsState.collectAsStateWithLifecycle()
     val context = LocalContext.current
     var permissionDenied by rememberSaveable { mutableStateOf(false) }
 
@@ -64,6 +72,7 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
+                .verticalScroll(rememberScrollState())
                 .padding(24.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
@@ -127,6 +136,114 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
             }
 
             Text(stringResource(R.string.scan_scope_note), style = MaterialTheme.typography.bodyMedium)
+
+            DownloadsSection(
+                state = downloadsState,
+                onScan = viewModel::scanDownloads,
+            )
         }
     }
 }
+
+@Composable
+private fun DownloadsSection(state: DownloadsState, onScan: () -> Unit) {
+    val context = LocalContext.current
+    var accessDenied by rememberSaveable { mutableStateOf(false) }
+
+    val settingsLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.StartActivityForResult(),
+    ) {
+        if (hasDownloadsAccess(context)) {
+            accessDenied = false
+            onScan()
+        } else {
+            accessDenied = true
+        }
+    }
+
+    val permissionLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.RequestPermission(),
+    ) { granted ->
+        accessDenied = !granted
+        if (granted) onScan()
+    }
+
+    Text(stringResource(R.string.downloads_explanation), style = MaterialTheme.typography.bodyMedium)
+
+    Button(
+        onClick = {
+            when {
+                hasDownloadsAccess(context) -> {
+                    accessDenied = false
+                    onScan()
+                }
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.R -> {
+                    accessDenied = false
+                    settingsLauncher.launch(
+                        Intent(
+                            Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION,
+                            Uri.parse("package:${context.packageName}"),
+                        ),
+                    )
+                }
+                else -> permissionLauncher.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
+            }
+        },
+    ) {
+        Text(stringResource(R.string.downloads_button))
+    }
+
+    when (state) {
+        DownloadsState.Idle -> Unit
+        DownloadsState.Scanning -> {
+            CircularProgressIndicator()
+            Text(stringResource(R.string.downloads_running))
+        }
+        is DownloadsState.Done -> {
+            if (state.oldFilesCount == 0) {
+                Text(stringResource(R.string.downloads_old_empty))
+            } else {
+                Text(
+                    stringResource(
+                        R.string.downloads_old_result,
+                        state.oldFilesCount,
+                        ByteFormat.format(state.oldFilesBytes),
+                    ),
+                )
+            }
+            if (state.apkCount == 0) {
+                Text(stringResource(R.string.downloads_apk_empty))
+            } else {
+                Text(
+                    stringResource(
+                        R.string.downloads_apk_result,
+                        state.apkCount,
+                        ByteFormat.format(state.apkBytes),
+                    ),
+                )
+            }
+        }
+        DownloadsState.Failed ->
+            Text(
+                stringResource(R.string.downloads_error),
+                color = MaterialTheme.colorScheme.error,
+            )
+    }
+
+    if (accessDenied) {
+        Text(
+            stringResource(R.string.downloads_access_denied),
+            color = MaterialTheme.colorScheme.error,
+        )
+    }
+}
+
+private fun hasDownloadsAccess(context: Context): Boolean =
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+        Environment.isExternalStorageManager()
+    } else {
+        ContextCompat.checkSelfPermission(
+            context,
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+        ) == PackageManager.PERMISSION_GRANTED
+    }

@@ -11,5 +11,14 @@
     <string name="scan_empty">No hi ha fitxers de 100 MB o més</string>
     <string name="scan_permission_denied">Sense permís de lectura de mitjans no es poden analitzar fotos, vídeos ni àudio.</string>
     <string name="scan_error">No s\'han pogut analitzar els fitxers. Torna-ho a provar.</string>
-    <string name="scan_scope_note">Només s\'analitzen fotos, vídeos i àudio; els documents, APKs i fitxers comprimits arribaran amb SAF.</string>
+    <string name="scan_scope_note">Només s\'analitzen fotos, vídeos i àudio; els documents, zips i APKs es cerquen a Baixades amb el botó de sota.</string>
+    <string name="downloads_explanation">Per veure APKs, zips i documents de Baixades, Android exigeix el permís «Accés a tots els fitxers». Criba només el fa servir per llegir i mai esborra res.</string>
+    <string name="downloads_button">Cerca a Baixades</string>
+    <string name="downloads_running">Cercant a Baixades…</string>
+    <string name="downloads_old_result">%1$d fitxers amb més de 90 dies a Baixades ocupen %2$s</string>
+    <string name="downloads_old_empty">No hi ha fitxers amb més de 90 dies a Baixades</string>
+    <string name="downloads_apk_result">%1$d APKs (ja instal·lats o amb més de 30 dies) ocupen %2$s</string>
+    <string name="downloads_apk_empty">No hi ha APKs ja instal·lats ni amb més de 30 dies</string>
+    <string name="downloads_access_denied">Sense accés a tots els fitxers no es pot llegir Baixades. El pots concedir als ajustos del sistema.</string>
+    <string name="downloads_error">No s\'ha pogut analitzar Baixades. Torna-ho a provar.</string>
 </resources>

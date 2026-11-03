@@ -4,6 +4,16 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 
 ## [Sin publicar]
 
+## [0.5.0] - 2026-11-03
+
+### Añadido
+
+- Acceso de solo lectura a Descargas con MANAGE_EXTERNAL_STORAGE (se pide al pulsar el botón), DownloadsFileSource, detección de APKs con PackageManager y resultados en la pantalla inicial.
+
+### Corregido
+
+- La pantalla inicial se desplaza: en horizontal o con más contenido, la sección de Descargas quedaba fuera de la pantalla.
+
 ## [0.4.0] - 2026-11-03
 
 ### Añadido

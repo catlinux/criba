@@ -11,5 +11,14 @@
     <string name="scan_empty">No hay archivos de 100 MB o más</string>
     <string name="scan_permission_denied">Sin permiso de lectura de medios no se pueden analizar fotos, vídeos ni audio.</string>
     <string name="scan_error">No se pudieron analizar los archivos. Inténtalo de nuevo.</string>
-    <string name="scan_scope_note">Solo se analizan fotos, vídeos y audio; los documentos, APKs y archivos comprimidos llegarán con SAF.</string>
+    <string name="scan_scope_note">Solo se analizan fotos, vídeos y audio; los documentos, zips y APKs se buscan en Descargas con el botón de abajo.</string>
+    <string name="downloads_explanation">Para ver APKs, zips y documentos de Descargas, Android exige el permiso «Acceso a todos los archivos». Criba solo lo usa para leer y nunca borra nada.</string>
+    <string name="downloads_button">Buscar en Descargas</string>
+    <string name="downloads_running">Buscando en Descargas…</string>
+    <string name="downloads_old_result">%1$d archivos con más de 90 días en Descargas ocupan %2$s</string>
+    <string name="downloads_old_empty">No hay archivos con más de 90 días en Descargas</string>
+    <string name="downloads_apk_result">%1$d APKs (ya instalados o con más de 30 días) ocupan %2$s</string>
+    <string name="downloads_apk_empty">No hay APKs ya instalados ni con más de 30 días</string>
+    <string name="downloads_access_denied">Sin acceso a todos los archivos no se puede leer Descargas. Puedes concederlo en los ajustes del sistema.</string>
+    <string name="downloads_error">No se pudo analizar Descargas. Inténtalo de nuevo.</string>
 </resources>

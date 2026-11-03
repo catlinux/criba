@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Criba no declara INTERNET ni ningún permiso de red: sin conexión, analítica ni telemetría. -->
     <!-- Solo lectura de medios; en API 26-32 el acceso se cubre con READ_EXTERNAL_STORAGE. -->
@@ -9,6 +10,10 @@
     <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
+    <!-- Solo para leer Descargas (APKs, zips y documentos), que MediaStore no muestra a una app normal. -->
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
 
     <application
         android:name=".CribaApp"
