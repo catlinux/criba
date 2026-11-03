@@ -10,6 +10,7 @@ import io.github.catlinux.criba.domain.InstalledAppsSource
 import io.github.catlinux.criba.domain.LargeFilesScanner
 import io.github.catlinux.criba.domain.OldApksScanner
 import io.github.catlinux.criba.domain.OldDownloadsScanner
+import io.github.catlinux.criba.domain.ScreenshotsScanner
 import javax.inject.Named
 
 @Module
@@ -28,4 +29,7 @@ object DomainModule {
         inspector: ApkInspector,
         installed: InstalledAppsSource,
     ): OldApksScanner = OldApksScanner(source, inspector, installed)
+
+    @Provides
+    fun provideScreenshotsScanner(source: FileSource): ScreenshotsScanner = ScreenshotsScanner(source)
 }

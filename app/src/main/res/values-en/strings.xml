@@ -4,7 +4,7 @@
     <string name="home_title">Storage</string>
     <string name="home_free">Free: %1$s of %2$s</string>
     <string name="home_used">Used: %1$s</string>
-    <string name="home_note">Criba only counts large photos, videos and audio files. Scanning never deletes: the default mode is read-only.</string>
+    <string name="home_note">Criba only counts files. Scanning never deletes: the default mode is read-only.</string>
     <string name="scan_button">Find large files</string>
     <string name="scan_running">Looking for large files…</string>
     <string name="scan_result">%1$d files of 100 MB or more take up %2$s</string>
@@ -21,4 +21,12 @@
     <string name="downloads_apk_empty">No installed APKs or APKs older than 30 days</string>
     <string name="downloads_access_denied">Without all files access, Downloads cannot be read. You can grant it in the system settings.</string>
     <string name="downloads_error">Downloads could not be analysed. Try again.</string>
+    <string name="screenshots_button">Find screenshots</string>
+    <string name="screenshots_running">Looking for screenshots…</string>
+    <string name="screenshots_bucket_30_90">%1$d screenshots between 30 and 90 days old take up %2$s</string>
+    <string name="screenshots_bucket_90_365">%1$d screenshots between 90 days and 1 year old take up %2$s</string>
+    <string name="screenshots_bucket_365">%1$d screenshots more than 1 year old take up %2$s</string>
+    <string name="screenshots_total">In total, %1$d screenshots take up %2$s</string>
+    <string name="screenshots_empty">No screenshots older than 30 days</string>
+    <string name="screenshots_error">The screenshots could not be analysed. Try again.</string>
 </resources>

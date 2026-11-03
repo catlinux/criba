@@ -4,7 +4,7 @@
     <string name="home_title">Almacenamiento</string>
     <string name="home_free">Libre: %1$s de %2$s</string>
     <string name="home_used">Usado: %1$s</string>
-    <string name="home_note">Criba solo cuenta archivos grandes de fotos, vídeo y audio. Escanear nunca borra: el modo por defecto es solo lectura.</string>
+    <string name="home_note">Criba solo cuenta archivos. Escanear nunca borra: el modo por defecto es solo lectura.</string>
     <string name="scan_button">Buscar archivos grandes</string>
     <string name="scan_running">Buscando archivos grandes…</string>
     <string name="scan_result">%1$d archivos de 100 MB o más ocupan %2$s</string>
@@ -21,4 +21,12 @@
     <string name="downloads_apk_empty">No hay APKs ya instalados ni con más de 30 días</string>
     <string name="downloads_access_denied">Sin acceso a todos los archivos no se puede leer Descargas. Puedes concederlo en los ajustes del sistema.</string>
     <string name="downloads_error">No se pudo analizar Descargas. Inténtalo de nuevo.</string>
+    <string name="screenshots_button">Buscar capturas de pantalla</string>
+    <string name="screenshots_running">Buscando capturas de pantalla…</string>
+    <string name="screenshots_bucket_30_90">%1$d capturas de entre 30 y 90 días ocupan %2$s</string>
+    <string name="screenshots_bucket_90_365">%1$d capturas de entre 90 días y 1 año ocupan %2$s</string>
+    <string name="screenshots_bucket_365">%1$d capturas de más de 1 año ocupan %2$s</string>
+    <string name="screenshots_total">En total, %1$d capturas ocupan %2$s</string>
+    <string name="screenshots_empty">No hay capturas de más de 30 días</string>
+    <string name="screenshots_error">No se pudieron analizar las capturas. Inténtalo de nuevo.</string>
 </resources>

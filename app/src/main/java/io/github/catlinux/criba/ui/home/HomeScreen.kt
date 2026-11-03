@@ -35,6 +35,7 @@ import androidx.core.content.ContextCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import io.github.catlinux.criba.R
+import io.github.catlinux.criba.domain.AgeBucket
 import io.github.catlinux.criba.domain.ByteFormat
 
 @Composable
@@ -42,8 +43,10 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
     val storage = viewModel.storage
     val largeFilesState by viewModel.largeFilesState.collectAsStateWithLifecycle()
     val downloadsState by viewModel.downloadsState.collectAsStateWithLifecycle()
+    val screenshotsState by viewModel.screenshotsState.collectAsStateWithLifecycle()
     val context = LocalContext.current
     var permissionDenied by rememberSaveable { mutableStateOf(false) }
+    var pendingScan by rememberSaveable { mutableStateOf(PendingScan.LARGE_FILES) }
 
     val scanPermissions = remember {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -57,6 +60,13 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
         }
     }
 
+    fun runScan(target: PendingScan) {
+        when (target) {
+            PendingScan.LARGE_FILES -> viewModel.scanLargeFiles()
+            PendingScan.SCREENSHOTS -> viewModel.scanScreenshots()
+        }
+    }
+
     val permissionLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions(),
     ) {
@@ -64,7 +74,20 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
             ContextCompat.checkSelfPermission(context, it) == PackageManager.PERMISSION_GRANTED
         }
         permissionDenied = !allGranted
-        if (allGranted) viewModel.scanLargeFiles()
+        if (allGranted) runScan(pendingScan)
+    }
+
+    fun requestScan(target: PendingScan) {
+        pendingScan = target
+        val missing = scanPermissions.filter {
+            ContextCompat.checkSelfPermission(context, it) != PackageManager.PERMISSION_GRANTED
+        }
+        if (missing.isEmpty()) {
+            permissionDenied = false
+            runScan(target)
+        } else {
+            permissionLauncher.launch(missing.toTypedArray())
+        }
     }
 
     Scaffold { padding ->
@@ -88,17 +111,7 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
             Text(stringResource(R.string.home_note), style = MaterialTheme.typography.bodyMedium)
 
             Button(
-                onClick = {
-                    val missing = scanPermissions.filter {
-                        ContextCompat.checkSelfPermission(context, it) != PackageManager.PERMISSION_GRANTED
-                    }
-                    if (missing.isEmpty()) {
-                        permissionDenied = false
-                        viewModel.scanLargeFiles()
-                    } else {
-                        permissionLauncher.launch(missing.toTypedArray())
-                    }
-                },
+                onClick = { requestScan(PendingScan.LARGE_FILES) },
             ) {
                 Text(stringResource(R.string.scan_button))
             }
@@ -124,6 +137,46 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
                 LargeFilesState.Failed ->
                     Text(
                         stringResource(R.string.scan_error),
+                        color = MaterialTheme.colorScheme.error,
+                    )
+            }
+
+            Button(
+                onClick = { requestScan(PendingScan.SCREENSHOTS) },
+            ) {
+                Text(stringResource(R.string.screenshots_button))
+            }
+
+            when (val state = screenshotsState) {
+                ScreenshotsState.Idle -> Unit
+                ScreenshotsState.Scanning -> {
+                    CircularProgressIndicator()
+                    Text(stringResource(R.string.screenshots_running))
+                }
+                is ScreenshotsState.Done ->
+                    if (state.count == 0) {
+                        Text(stringResource(R.string.screenshots_empty))
+                    } else {
+                        state.buckets.filter { it.count > 0 }.forEach { summary ->
+                            Text(
+                                stringResource(
+                                    screenshotsBucketText(summary.bucket),
+                                    summary.count,
+                                    ByteFormat.format(summary.totalBytes),
+                                ),
+                            )
+                        }
+                        Text(
+                            stringResource(
+                                R.string.screenshots_total,
+                                state.count,
+                                ByteFormat.format(state.totalBytes),
+                            ),
+                        )
+                    }
+                ScreenshotsState.Failed ->
+                    Text(
+                        stringResource(R.string.screenshots_error),
                         color = MaterialTheme.colorScheme.error,
                     )
             }
@@ -246,4 +299,13 @@ private fun hasDownloadsAccess(context: Context): Boolean =
             context,
             Manifest.permission.READ_EXTERNAL_STORAGE,
         ) == PackageManager.PERMISSION_GRANTED
+    }
+
+private enum class PendingScan { LARGE_FILES, SCREENSHOTS }
+
+private fun screenshotsBucketText(bucket: AgeBucket): Int =
+    when (bucket) {
+        AgeBucket.DAYS_30_TO_90 -> R.string.screenshots_bucket_30_90
+        AgeBucket.DAYS_90_TO_365 -> R.string.screenshots_bucket_90_365
+        AgeBucket.OVER_365 -> R.string.screenshots_bucket_365
     }

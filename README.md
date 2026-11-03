@@ -2,7 +2,7 @@
 
 Limpiador de almacenamiento para Android, seguro y sin publicidad. Encuentra archivos grandes, duplicados y apps sin uso, y verifica una copia de seguridad antes de borrar nada.
 
-> **Estado: Fase 1 en curso (escáner de lectura).** La app ya cuenta los archivos grandes de fotos, vídeo y audio y, en Descargas, los archivos con más de 90 días y los APKs (solo lectura) desde la pantalla inicial. Ver [docs/ROADMAP.md](docs/ROADMAP.md).
+> **Estado: Fase 1 en curso (escáner de lectura).** La app ya cuenta los archivos grandes de fotos, vídeo y audio, los archivos con más de 90 días y los APKs en Descargas, y las capturas de pantalla de más de 30 días agrupadas por antigüedad (solo lectura) desde la pantalla inicial. Ver [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Filosofía
 

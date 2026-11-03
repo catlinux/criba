@@ -3,9 +3,11 @@ package io.github.catlinux.criba.ui.home
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import io.github.catlinux.criba.domain.AgeBucket
 import io.github.catlinux.criba.domain.LargeFilesScanner
 import io.github.catlinux.criba.domain.OldApksScanner
 import io.github.catlinux.criba.domain.OldDownloadsScanner
+import io.github.catlinux.criba.domain.ScreenshotsScanner
 import io.github.catlinux.criba.domain.StorageInfoSource
 import io.github.catlinux.criba.domain.StorageSnapshot
 import javax.inject.Inject
@@ -33,12 +35,26 @@ sealed interface DownloadsState {
     data object Failed : DownloadsState
 }
 
+data class ScreenshotBucket(val bucket: AgeBucket, val count: Int, val totalBytes: Long)
+
+sealed interface ScreenshotsState {
+    data object Idle : ScreenshotsState
+    data object Scanning : ScreenshotsState
+    data class Done(
+        val count: Int,
+        val totalBytes: Long,
+        val buckets: List<ScreenshotBucket>,
+    ) : ScreenshotsState
+    data object Failed : ScreenshotsState
+}
+
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     source: StorageInfoSource,
     private val scanner: LargeFilesScanner,
     private val oldDownloadsScanner: OldDownloadsScanner,
     private val oldApksScanner: OldApksScanner,
+    private val screenshotsScanner: ScreenshotsScanner,
 ) : ViewModel() {
     val storage: StorageSnapshot = source.read()
 
@@ -47,6 +63,9 @@ class HomeViewModel @Inject constructor(
 
     private val _downloadsState = MutableStateFlow<DownloadsState>(DownloadsState.Idle)
     val downloadsState: StateFlow<DownloadsState> = _downloadsState.asStateFlow()
+
+    private val _screenshotsState = MutableStateFlow<ScreenshotsState>(ScreenshotsState.Idle)
+    val screenshotsState: StateFlow<ScreenshotsState> = _screenshotsState.asStateFlow()
 
     fun scanLargeFiles() {
         viewModelScope.launch {
@@ -76,6 +95,24 @@ class HomeViewModel @Inject constructor(
                 )
             } catch (e: Exception) {
                 DownloadsState.Failed
+            }
+        }
+    }
+
+    fun scanScreenshots() {
+        viewModelScope.launch {
+            _screenshotsState.value = ScreenshotsState.Scanning
+            _screenshotsState.value = try {
+                val result = screenshotsScanner.scan()
+                ScreenshotsState.Done(
+                    count = result.totalCount,
+                    totalBytes = result.totalBytes,
+                    buckets = result.groups.map {
+                        ScreenshotBucket(bucket = it.bucket, count = it.files.size, totalBytes = it.totalBytes)
+                    },
+                )
+            } catch (e: Exception) {
+                ScreenshotsState.Failed
             }
         }
     }

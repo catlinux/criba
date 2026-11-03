@@ -4,6 +4,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 
 ## [Sin publicar]
 
+## [0.6.0] - 2026-11-03
+
+### Añadido
+
+- ScreenshotsScanner (capturas de pantalla agrupadas por antigüedad, solo lectura) y botón en la pantalla inicial.
+
 ## [0.5.0] - 2026-11-03
 
 ### Añadido
