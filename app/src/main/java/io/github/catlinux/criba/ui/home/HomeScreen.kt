@@ -44,6 +44,7 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
     val largeFilesState by viewModel.largeFilesState.collectAsStateWithLifecycle()
     val downloadsState by viewModel.downloadsState.collectAsStateWithLifecycle()
     val screenshotsState by viewModel.screenshotsState.collectAsStateWithLifecycle()
+    val foldersState by viewModel.foldersState.collectAsStateWithLifecycle()
     val context = LocalContext.current
     var permissionDenied by rememberSaveable { mutableStateOf(false) }
     var pendingScan by rememberSaveable { mutableStateOf(PendingScan.LARGE_FILES) }
@@ -194,6 +195,11 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
                 state = downloadsState,
                 onScan = viewModel::scanDownloads,
             )
+
+            FoldersSection(
+                state = foldersState,
+                onFolderPicked = viewModel::scanFolders,
+            )
         }
     }
 }
@@ -288,6 +294,51 @@ private fun DownloadsSection(state: DownloadsState, onScan: () -> Unit) {
             stringResource(R.string.downloads_access_denied),
             color = MaterialTheme.colorScheme.error,
         )
+    }
+}
+
+@Composable
+private fun FoldersSection(state: FoldersState, onFolderPicked: (Uri) -> Unit) {
+    val launcher = rememberLauncherForActivityResult(
+        ActivityResultContracts.OpenDocumentTree(),
+    ) { uri ->
+        if (uri != null) onFolderPicked(uri)
+    }
+
+    Text(stringResource(R.string.folders_explanation), style = MaterialTheme.typography.bodyMedium)
+
+    Button(onClick = { launcher.launch(null) }) {
+        Text(stringResource(R.string.folders_button))
+    }
+
+    when (state) {
+        FoldersState.Idle -> Unit
+        FoldersState.Scanning -> {
+            CircularProgressIndicator()
+            Text(stringResource(R.string.folders_running))
+        }
+        is FoldersState.Done ->
+            if (state.emptyCount == 0 && state.inactiveCount == 0) {
+                Text(stringResource(R.string.folders_none))
+            } else {
+                if (state.emptyCount > 0) {
+                    Text(stringResource(R.string.folders_empty_count, state.emptyCount))
+                }
+                if (state.inactiveCount > 0) {
+                    Text(
+                        stringResource(
+                            R.string.folders_inactive_result,
+                            state.inactiveCount,
+                            ByteFormat.format(state.inactiveBytes),
+                        ),
+                    )
+                }
+            }
+        FoldersState.Failed ->
+            Text(
+                stringResource(R.string.folders_error),
+                color = MaterialTheme.colorScheme.error,
+            )
     }
 }
 

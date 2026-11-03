@@ -29,4 +29,11 @@
     <string name="screenshots_total">En total, %1$d captures ocupen %2$s</string>
     <string name="screenshots_empty">No hi ha captures de més de 30 dies</string>
     <string name="screenshots_error">No s\'han pogut analitzar les captures. Torna-ho a provar.</string>
+    <string name="folders_explanation">Tria una carpeta; Criba hi busca subcarpetes buides o sense canvis des de fa més d\'un any. Només llegeix i no esborra res. Android no permet triar Baixades ni l\'arrel de l\'emmagatzematge.</string>
+    <string name="folders_button">Tria una carpeta i cerca</string>
+    <string name="folders_running">Analitzant la carpeta…</string>
+    <string name="folders_empty_count">%1$d carpetes buides</string>
+    <string name="folders_inactive_result">%1$d carpetes sense canvis en més d\'un any ocupen %2$s</string>
+    <string name="folders_none">No hi ha carpetes buides ni sense ús</string>
+    <string name="folders_error">No s\'ha pogut analitzar la carpeta. Torna-ho a provar.</string>
 </resources>

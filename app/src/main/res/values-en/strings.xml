@@ -29,4 +29,11 @@
     <string name="screenshots_total">In total, %1$d screenshots take up %2$s</string>
     <string name="screenshots_empty">No screenshots older than 30 days</string>
     <string name="screenshots_error">The screenshots could not be analysed. Try again.</string>
+    <string name="folders_explanation">Choose a folder; Criba looks inside it for empty subfolders or subfolders unchanged for more than a year. It only reads and never deletes anything. Android does not allow choosing Downloads or the storage root.</string>
+    <string name="folders_button">Choose folder and search</string>
+    <string name="folders_running">Analysing the folder…</string>
+    <string name="folders_empty_count">%1$d empty folders</string>
+    <string name="folders_inactive_result">%1$d folders unchanged for more than a year take up %2$s</string>
+    <string name="folders_none">No empty or unused folders</string>
+    <string name="folders_error">The folder could not be analysed. Try again.</string>
 </resources>

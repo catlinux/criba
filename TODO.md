@@ -7,6 +7,9 @@
 
 ## Media
 
+- Pluralizar los textos de la pantalla inicial (hoy sale «1 carpetas» o «1 archivos») con `plurals` en los tres idiomas; encaja en el paso 7 de la Fase 1 (informe).
+- Migrar `hiltViewModel` al paquete `androidx.hilt.lifecycle.viewmodel.compose` (aviso de obsolescencia al compilar).
+- Decidir `QUERY_ALL_PACKAGES` y el acceso de uso en la Fase 3: sin ellos «ya instalada» no siempre se detecta.
 - Decidir papelera propia frente a nativa (ver `docs/ARCHITECTURE.md`).
 - Actualizar dependencias señaladas por lint (AGP 8.13.x, Compose BOM, Kotlin, Hilt) cuando se apruebe la Fase 0.
 

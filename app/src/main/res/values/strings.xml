@@ -29,4 +29,11 @@
     <string name="screenshots_total">En total, %1$d capturas ocupan %2$s</string>
     <string name="screenshots_empty">No hay capturas de más de 30 días</string>
     <string name="screenshots_error">No se pudieron analizar las capturas. Inténtalo de nuevo.</string>
+    <string name="folders_explanation">Elige una carpeta; Criba busca dentro de ella subcarpetas vacías o sin cambios desde hace más de un año. Solo lee y no borra nada. Android no permite elegir Descargas ni la raíz del almacenamiento.</string>
+    <string name="folders_button">Elegir carpeta y buscar</string>
+    <string name="folders_running">Analizando la carpeta…</string>
+    <string name="folders_empty_count">%1$d carpetas vacías</string>
+    <string name="folders_inactive_result">%1$d carpetas sin cambios en más de un año ocupan %2$s</string>
+    <string name="folders_none">No hay carpetas vacías ni sin uso</string>
+    <string name="folders_error">No se pudo analizar la carpeta. Inténtalo de nuevo.</string>
 </resources>

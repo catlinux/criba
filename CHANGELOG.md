@@ -4,6 +4,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 
 ## [Sin publicar]
 
+## [0.7.0] - 2026-11-03
+
+### Añadido
+
+- Análisis de carpetas vacías y sin uso en una carpeta elegida con el selector del sistema (solo lectura, rutas protegidas omitidas).
+
 ## [0.6.0] - 2026-11-03
 
 ### Añadido
