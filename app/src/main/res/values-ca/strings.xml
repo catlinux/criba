@@ -4,5 +4,12 @@
     <string name="home_title">Emmagatzematge</string>
     <string name="home_free">Lliure: %1$s de %2$s</string>
     <string name="home_used">Usat: %1$s</string>
-    <string name="home_note">Criba encara no analitza res. Escanejar mai esborra: el mode per defecte és només lectura.</string>
+    <string name="home_note">Criba només compta fitxers grans de fotos, vídeo i àudio. Escanejar mai esborra: el mode per defecte és només lectura.</string>
+    <string name="scan_button">Cerca fitxers grans</string>
+    <string name="scan_running">Cercant fitxers grans…</string>
+    <string name="scan_result">%1$d fitxers de 100 MB o més ocupen %2$s</string>
+    <string name="scan_empty">No hi ha fitxers de 100 MB o més</string>
+    <string name="scan_permission_denied">Sense permís de lectura de mitjans no es poden analitzar fotos, vídeos ni àudio.</string>
+    <string name="scan_error">No s\'han pogut analitzar els fitxers. Torna-ho a provar.</string>
+    <string name="scan_scope_note">Només s\'analitzen fotos, vídeos i àudio; els documents, APKs i fitxers comprimits arribaran amb SAF.</string>
 </resources>

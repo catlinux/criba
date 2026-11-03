@@ -4,6 +4,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 
 ## [Sin publicar]
 
+## [0.3.0] - 2026-11-03
+
+### Añadido
+
+- MediaStoreFileSource (solo lectura, imágenes, vídeo y audio), permisos de lectura de medios y botón para buscar archivos grandes en la pantalla inicial.
+
 ## [0.2.0] - 2026-11-03
 
 ### Añadido

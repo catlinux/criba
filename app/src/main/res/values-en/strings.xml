@@ -4,5 +4,12 @@
     <string name="home_title">Storage</string>
     <string name="home_free">Free: %1$s of %2$s</string>
     <string name="home_used">Used: %1$s</string>
-    <string name="home_note">Criba does not scan anything yet. Scanning never deletes: the default mode is read-only.</string>
+    <string name="home_note">Criba only counts large photos, videos and audio files. Scanning never deletes: the default mode is read-only.</string>
+    <string name="scan_button">Find large files</string>
+    <string name="scan_running">Looking for large files…</string>
+    <string name="scan_result">%1$d files of 100 MB or more take up %2$s</string>
+    <string name="scan_empty">No files of 100 MB or more</string>
+    <string name="scan_permission_denied">Without media read permission, photos, videos and audio cannot be analysed.</string>
+    <string name="scan_error">The files could not be analysed. Try again.</string>
+    <string name="scan_scope_note">Only photos, videos and audio are analysed; documents, APKs and compressed files will come with SAF.</string>
 </resources>

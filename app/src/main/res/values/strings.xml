@@ -4,5 +4,12 @@
     <string name="home_title">Almacenamiento</string>
     <string name="home_free">Libre: %1$s de %2$s</string>
     <string name="home_used">Usado: %1$s</string>
-    <string name="home_note">Criba todavía no analiza nada. Escanear nunca borra: el modo por defecto es solo lectura.</string>
+    <string name="home_note">Criba solo cuenta archivos grandes de fotos, vídeo y audio. Escanear nunca borra: el modo por defecto es solo lectura.</string>
+    <string name="scan_button">Buscar archivos grandes</string>
+    <string name="scan_running">Buscando archivos grandes…</string>
+    <string name="scan_result">%1$d archivos de 100 MB o más ocupan %2$s</string>
+    <string name="scan_empty">No hay archivos de 100 MB o más</string>
+    <string name="scan_permission_denied">Sin permiso de lectura de medios no se pueden analizar fotos, vídeos ni audio.</string>
+    <string name="scan_error">No se pudieron analizar los archivos. Inténtalo de nuevo.</string>
+    <string name="scan_scope_note">Solo se analizan fotos, vídeos y audio; los documentos, APKs y archivos comprimidos llegarán con SAF.</string>
 </resources>

@@ -2,7 +2,7 @@
 
 Limpiador de almacenamiento para Android, seguro y sin publicidad. Encuentra archivos grandes, duplicados y apps sin uso, y verifica una copia de seguridad antes de borrar nada.
 
-> **Estado: Fase 1 en curso (escáner de lectura).** Ya existe un escáner de archivos grandes en `domain`, pero todavía no tiene interfaz: la app solo muestra el espacio real del almacenamiento interno. Ver [docs/ROADMAP.md](docs/ROADMAP.md).
+> **Estado: Fase 1 en curso (escáner de lectura).** La app ya cuenta los archivos grandes de fotos, vídeo y audio (solo lectura) desde la pantalla inicial; los documentos, APKs y archivos comprimidos llegarán con SAF. Ver [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Filosofía
 
@@ -24,6 +24,7 @@ Criba ayuda a recuperar espacio de forma **segura y reversible**:
 ## Requisitos
 
 - Para usarla: Android 8.0 (API 26) o superior.
+- Permisos: solo lectura de medios (fotos, vídeo y audio) en Android 13 o superior; en Android 8–12, lectura del almacenamiento externo. No declara `INTERNET` ni acceso total a archivos.
 - Para compilarla: JDK 17 y Android SDK con la plataforma 36 (`ANDROID_HOME` definido).
 
 ## Compilar y probar
