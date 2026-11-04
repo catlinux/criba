@@ -13,3 +13,4 @@
 
 - F-Droid y Google Play: decisión del mantenedor, solo GitHub Releases.
 - Funciones de «acelerar» o «limpiar RAM»: no sirven en Android moderno.
+- Duplicados similares (imágenes parecidas): dan falsos positivos y no se pueden verificar con cifras reales; por ahora solo duplicados exactos por SHA-256.

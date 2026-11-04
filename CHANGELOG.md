@@ -4,6 +4,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 
 ## [Sin publicar]
 
+## [0.19.0] - 2026-11-04
+
+### Añadido
+
+- Pantalla Duplicados (búsqueda de duplicados exactos por SHA-256 con progreso y cancelación, conservación de una copia, movimiento a la papelera tras verificación previa); las copias multimedia quedan bloqueadas hasta la copia verificada.
+
 ## [0.18.0] - 2026-11-04
 
 ### Añadido

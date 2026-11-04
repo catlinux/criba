@@ -22,6 +22,10 @@ Escáneres como casos de uso independientes y testeables: `LargeFilesScanner`, `
 
 `PackageManagerAppSource` lista solo apps con icono de lanzador (bloque `<queries>` con `MAIN`/`LAUNCHER` y `MAIN`/`HOME`; sin `QUERY_ALL_PACKAGES`) y marca como protegidas el lanzador y el teclado activos y los titulares de los roles de lanzador, teléfono y SMS. El tamaño y el último uso exigen el acceso de uso (`PACKAGE_USAGE_STATS`, comprobado con `AppOpsManager`): sin él, `sizes` y `lastUsedEpochSeconds` quedan a `null` y no se consultan `StorageStatsManager` ni `UsageStatsManager`. En `StorageStats`, `dataBytes` ya incluye la caché, así que la capa data mapea `AppSizes` restando la caché de `dataBytes`; de lo contrario `totalBytes` la contaría dos veces.
 
+## Pantalla Duplicados
+
+La pantalla escanea con `DuplicatesScanner` mostrando progreso y permitiendo cancelar. Cada grupo conserva una copia elegida por `KeepPolicy` o por el usuario; `DuplicatesReview` calcula el estado de cada copia restante (seleccionable, necesita copia verificada o protegida) y solo deja marcar las elegibles, sin poder marcar nunca la conservada. Al confirmar, `DuplicateRecheck` vuelve a hashear la copia conservada y las marcadas; solo las que coinciden se mueven con `ConfirmedDeletion` a la papelera, y el resto se cuenta como no verificado. El espacio no se libera hasta vaciar la papelera.
+
 ## Duplicados exactos
 
 `FileContentHasher` calcula SHA-256 en streaming (búfer de 64 KiB, cancelable) sobre la ruta absoluta que reconstruye `ScanFile.toDeletionCandidate(storageRoot)`. Antes de leer exige que `DeletionPolicy` no marque la ruta como protegida, que ningún tramo sea un enlace simbólico, que sea un archivo regular y que su tamaño actual coincida con el del escaneo; si algo falla devuelve `null` y el archivo se ignora (nunca se supone igual). Antes de borrar, `DuplicateRecheck` vuelve a hashear la copia conservada y las candidatas: si la conservada no coincide con el hash del grupo no se confirma nada, y cada copia que cambió o no se puede leer se excluye.

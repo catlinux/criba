@@ -114,6 +114,28 @@
     <string name="apps_size_unknown">Sense dades de mida</string>
     <string name="apps_no_use_recorded">Sense ús registrat en el darrer any</string>
     <string name="apps_open_settings">Obre els ajustos de l\'app</string>
+    <string name="dup_title">Duplicats</string>
+    <string name="dup_home_button">Duplicats</string>
+    <string name="dup_intro">Cerca fitxers amb el mateix contingut exacte comparant el contingut complet amb SHA-256. Sempre es conserva una còpia de cada grup; les còpies que moguis van a la paperera de Criba, on les pots restaurar. L\'espai s\'allibera quan es buida la paperera.</string>
+    <string name="dup_scan_button">Cerca duplicats</string>
+    <string name="dup_scanning">Analitzant %1$d de %2$d fitxers…</string>
+    <string name="dup_scanning_initial">Preparant l\'anàlisi…</string>
+    <string name="dup_cancel">Cancel·la</string>
+    <string name="dup_space_note">El resum indica el que es pot recuperar si esborres les còpies sobrants; l\'espai no s\'allibera fins que es buidi la paperera.</string>
+    <string name="dup_kept">Es conserva</string>
+    <string name="dup_keep_this">Conserva aquesta</string>
+    <string name="dup_needs_backup">Necessita còpia verificada</string>
+    <string name="dup_blocked">Protegida</string>
+    <string name="dup_select_all">Marca totes les sobrants</string>
+    <string name="dup_clear">Neteja</string>
+    <string name="dup_move_button">Mou a la paperera</string>
+    <string name="dup_confirm_note">Es guarden a la paperera de Criba (carpeta oculta) i les podràs restaurar; no s\'esborren definitivament.</string>
+    <string name="dup_moving">Movent a la paperera…</string>
+    <string name="dup_done_none">No s\'ha mogut cap fitxer.</string>
+    <string name="dup_result_note">Les còpies mogudes són a la paperera de Criba; no s\'han esborrat definitivament.</string>
+    <string name="dup_continue">Continua amb els restants</string>
+    <string name="dup_no_duplicates">No s\'han trobat duplicats exactes.</string>
+    <string name="dup_error">No s\'ha pogut completar: %1$s</string>
     <plurals name="scan_result">
         <item quantity="one">%1$d fitxer de 100 MB o més ocupa %2$s</item>
         <item quantity="other">%1$d fitxers de 100 MB o més ocupen %2$s</item>
@@ -209,5 +231,33 @@
     <plurals name="apps_unused_since">
         <item quantity="one">Sense usar des de fa %1$d dia</item>
         <item quantity="other">Sense usar des de fa %1$d dies</item>
+    </plurals>
+    <plurals name="dup_summary">
+        <item quantity="one">%1$d grup · %2$s recuperable si esborres la còpia sobrant</item>
+        <item quantity="other">%1$d grups · %2$s recuperables si esborres les còpies sobrants</item>
+    </plurals>
+    <plurals name="dup_copies">
+        <item quantity="one">%1$d còpia</item>
+        <item quantity="other">%1$d còpies</item>
+    </plurals>
+    <plurals name="dup_marked_summary">
+        <item quantity="one">%1$d fitxer · %2$s</item>
+        <item quantity="other">%1$d fitxers · %2$s</item>
+    </plurals>
+    <plurals name="dup_confirm_title">
+        <item quantity="one">Mou %1$d fitxer (%2$s) a la paperera</item>
+        <item quantity="other">Mou %1$d fitxers (%2$s) a la paperera</item>
+    </plurals>
+    <plurals name="dup_done">
+        <item quantity="one">S\'ha mogut %1$d fitxer (%2$s) a la paperera</item>
+        <item quantity="other">S\'han mogut %1$d fitxers (%2$s) a la paperera</item>
+    </plurals>
+    <plurals name="dup_not_verified">
+        <item quantity="one">No s\'ha mogut %1$d còpia perquè ha canviat o no s\'ha pogut verificar.</item>
+        <item quantity="other">No s\'han mogut %1$d còpies perquè han canviat o no s\'han pogut verificar.</item>
+    </plurals>
+    <plurals name="dup_failed_count">
+        <item quantity="one">No s\'ha pogut moure %1$d fitxer</item>
+        <item quantity="other">No s\'han pogut moure %1$d fitxers</item>
     </plurals>
 </resources>

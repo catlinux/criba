@@ -15,6 +15,7 @@ import io.github.catlinux.criba.ui.report.ReportViewModel
 import io.github.catlinux.criba.ui.review.ReviewScreen
 import io.github.catlinux.criba.ui.home.HomeViewModel
 import io.github.catlinux.criba.ui.apps.AppsScreen
+import io.github.catlinux.criba.ui.duplicates.DuplicatesScreen
 import io.github.catlinux.criba.ui.trash.HistoryScreen
 import io.github.catlinux.criba.ui.trash.TrashScreen
 
@@ -26,6 +27,7 @@ object Routes {
     const val TRASH = "trash"
     const val HISTORY = "history"
     const val APPS = "apps"
+    const val DUPLICATES = "duplicates"
 }
 
 @Composable
@@ -39,6 +41,7 @@ fun CribaNavHost() {
                 onOpenTrash = { navController.navigate(Routes.TRASH) },
                 onOpenHistory = { navController.navigate(Routes.HISTORY) },
                 onOpenApps = { navController.navigate(Routes.APPS) },
+                onOpenDuplicates = { navController.navigate(Routes.DUPLICATES) },
                 viewModel = homeViewModel,
             )
         }
@@ -88,6 +91,16 @@ fun CribaNavHost() {
         }
         composable(Routes.APPS) {
             AppsScreen(onBack = { navController.navigateUp() })
+        }
+        composable(Routes.DUPLICATES) { entry ->
+            val homeEntry = remember(entry) { navController.getBackStackEntry(Routes.HOME) }
+            val homeViewModel: HomeViewModel = hiltViewModel(homeEntry)
+            DuplicatesScreen(
+                onBack = {
+                    homeViewModel.refreshTrashBytes()
+                    navController.navigateUp()
+                },
+            )
         }
     }
 }

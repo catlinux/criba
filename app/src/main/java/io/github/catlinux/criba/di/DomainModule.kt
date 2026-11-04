@@ -47,8 +47,13 @@ object DomainModule {
     ): UnusedAppsScanner = UnusedAppsScanner(source, context.packageName)
 
     @Provides
-    fun provideDuplicatesScanner(source: FileSource, hasher: ContentHasher): DuplicatesScanner =
-        DuplicatesScanner(source, hasher)
+    fun provideDuplicatesScanner(
+        source: FileSource,
+        @Named("downloads") downloads: FileSource,
+        hasher: ContentHasher,
+    ): DuplicatesScanner =
+        // MediaStore no muestra documentos ni zips de Descargas; el escáner deduplica lo que ven ambas fuentes.
+        DuplicatesScanner({ source.listFiles() + downloads.listFiles() }, hasher)
 
     @Provides
     fun provideDuplicateRecheck(hasher: ContentHasher): DuplicateRecheck = DuplicateRecheck(hasher)

@@ -114,6 +114,28 @@
     <string name="apps_size_unknown">No size data</string>
     <string name="apps_no_use_recorded">No recorded use in the last year</string>
     <string name="apps_open_settings">Open app settings</string>
+    <string name="dup_title">Duplicates</string>
+    <string name="dup_home_button">Duplicates</string>
+    <string name="dup_intro">Finds files with identical content by comparing the whole file with SHA-256. One copy of every group is always kept; copies you move go to Criba\'s trash, where you can restore them. Space is freed when the trash is emptied.</string>
+    <string name="dup_scan_button">Find duplicates</string>
+    <string name="dup_scanning">Analysing %1$d of %2$d files…</string>
+    <string name="dup_scanning_initial">Preparing the scan…</string>
+    <string name="dup_cancel">Cancel</string>
+    <string name="dup_space_note">The summary shows what you can recover by deleting the extra copies; space is not freed until the trash is emptied.</string>
+    <string name="dup_kept">Kept</string>
+    <string name="dup_keep_this">Keep this one</string>
+    <string name="dup_needs_backup">Needs verified backup</string>
+    <string name="dup_blocked">Protected</string>
+    <string name="dup_select_all">Mark all extras</string>
+    <string name="dup_clear">Clear</string>
+    <string name="dup_move_button">Move to trash</string>
+    <string name="dup_confirm_note">They are stored in Criba\'s trash (a hidden folder) and you can restore them; they are not permanently deleted.</string>
+    <string name="dup_moving">Moving to trash…</string>
+    <string name="dup_done_none">No files were moved.</string>
+    <string name="dup_result_note">Moved copies are in Criba\'s trash; they have not been permanently deleted.</string>
+    <string name="dup_continue">Continue with the rest</string>
+    <string name="dup_no_duplicates">No exact duplicates found.</string>
+    <string name="dup_error">The operation could not be completed: %1$s</string>
     <plurals name="scan_result">
         <item quantity="one">%1$d file of 100 MB or more takes up %2$s</item>
         <item quantity="other">%1$d files of 100 MB or more take up %2$s</item>
@@ -209,5 +231,33 @@
     <plurals name="apps_unused_since">
         <item quantity="one">Unused for %1$d day</item>
         <item quantity="other">Unused for %1$d days</item>
+    </plurals>
+    <plurals name="dup_summary">
+        <item quantity="one">%1$d group · %2$s recoverable if you delete the extra copy</item>
+        <item quantity="other">%1$d groups · %2$s recoverable if you delete the extra copies</item>
+    </plurals>
+    <plurals name="dup_copies">
+        <item quantity="one">%1$d copy</item>
+        <item quantity="other">%1$d copies</item>
+    </plurals>
+    <plurals name="dup_marked_summary">
+        <item quantity="one">%1$d file · %2$s</item>
+        <item quantity="other">%1$d files · %2$s</item>
+    </plurals>
+    <plurals name="dup_confirm_title">
+        <item quantity="one">Move %1$d file (%2$s) to trash</item>
+        <item quantity="other">Move %1$d files (%2$s) to trash</item>
+    </plurals>
+    <plurals name="dup_done">
+        <item quantity="one">Moved %1$d file (%2$s) to trash</item>
+        <item quantity="other">Moved %1$d files (%2$s) to trash</item>
+    </plurals>
+    <plurals name="dup_not_verified">
+        <item quantity="one">%1$d copy was not moved because it changed or could not be verified.</item>
+        <item quantity="other">%1$d copies were not moved because they changed or could not be verified.</item>
+    </plurals>
+    <plurals name="dup_failed_count">
+        <item quantity="one">Could not move %1$d file</item>
+        <item quantity="other">Could not move %1$d files</item>
     </plurals>
 </resources>

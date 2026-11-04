@@ -114,6 +114,28 @@
     <string name="apps_size_unknown">Sin datos de tamaño</string>
     <string name="apps_no_use_recorded">Sin uso registrado en el último año</string>
     <string name="apps_open_settings">Abrir ajustes de la app</string>
+    <string name="dup_title">Duplicados</string>
+    <string name="dup_home_button">Duplicados</string>
+    <string name="dup_intro">Busca archivos con el mismo contenido exacto comparando el contenido completo con SHA-256. Siempre se conserva una copia de cada grupo; las copias que muevas van a la papelera de Criba, donde puedes restaurarlas. El espacio se libera al vaciar la papelera.</string>
+    <string name="dup_scan_button">Buscar duplicados</string>
+    <string name="dup_scanning">Analizando %1$d de %2$d archivos…</string>
+    <string name="dup_scanning_initial">Preparando el análisis…</string>
+    <string name="dup_cancel">Cancelar</string>
+    <string name="dup_space_note">El resumen indica lo recuperable si borras las copias sobrantes; el espacio no se libera hasta vaciar la papelera.</string>
+    <string name="dup_kept">Se conserva</string>
+    <string name="dup_keep_this">Conservar esta</string>
+    <string name="dup_needs_backup">Necesita copia verificada</string>
+    <string name="dup_blocked">Protegida</string>
+    <string name="dup_select_all">Marcar todas las sobrantes</string>
+    <string name="dup_clear">Limpiar</string>
+    <string name="dup_move_button">Mover a la papelera</string>
+    <string name="dup_confirm_note">Se guardan en la papelera de Criba (carpeta oculta) y podrás restaurarlas; no se borran definitivamente.</string>
+    <string name="dup_moving">Moviendo a la papelera…</string>
+    <string name="dup_done_none">No se movió ningún archivo.</string>
+    <string name="dup_result_note">Las copias movidas están en la papelera de Criba; no se han borrado definitivamente.</string>
+    <string name="dup_continue">Seguir con los restantes</string>
+    <string name="dup_no_duplicates">No se han encontrado duplicados exactos.</string>
+    <string name="dup_error">No se pudo completar: %1$s</string>
     <plurals name="scan_result">
         <item quantity="one">%1$d archivo de 100 MB o más ocupa %2$s</item>
         <item quantity="other">%1$d archivos de 100 MB o más ocupan %2$s</item>
@@ -209,5 +231,33 @@
     <plurals name="apps_unused_since">
         <item quantity="one">Sin usar desde hace %1$d día</item>
         <item quantity="other">Sin usar desde hace %1$d días</item>
+    </plurals>
+    <plurals name="dup_summary">
+        <item quantity="one">%1$d grupo · %2$s recuperable si borras la copia sobrante</item>
+        <item quantity="other">%1$d grupos · %2$s recuperables si borras las copias sobrantes</item>
+    </plurals>
+    <plurals name="dup_copies">
+        <item quantity="one">%1$d copia</item>
+        <item quantity="other">%1$d copias</item>
+    </plurals>
+    <plurals name="dup_marked_summary">
+        <item quantity="one">%1$d archivo · %2$s</item>
+        <item quantity="other">%1$d archivos · %2$s</item>
+    </plurals>
+    <plurals name="dup_confirm_title">
+        <item quantity="one">Mover %1$d archivo (%2$s) a la papelera</item>
+        <item quantity="other">Mover %1$d archivos (%2$s) a la papelera</item>
+    </plurals>
+    <plurals name="dup_done">
+        <item quantity="one">Se movió %1$d archivo (%2$s) a la papelera</item>
+        <item quantity="other">Se movieron %1$d archivos (%2$s) a la papelera</item>
+    </plurals>
+    <plurals name="dup_not_verified">
+        <item quantity="one">No se movió %1$d copia porque cambió o no se pudo verificar.</item>
+        <item quantity="other">No se movieron %1$d copias porque cambiaron o no se pudieron verificar.</item>
+    </plurals>
+    <plurals name="dup_failed_count">
+        <item quantity="one">No se pudo mover %1$d archivo</item>
+        <item quantity="other">No se pudieron mover %1$d archivos</item>
     </plurals>
 </resources>

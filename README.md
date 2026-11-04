@@ -2,7 +2,7 @@
 
 Limpiador de almacenamiento para Android, seguro y sin publicidad. Encuentra archivos grandes, duplicados y apps sin uso, y verifica una copia de seguridad antes de borrar nada.
 
-> **Estado: Fase 3 completa.** La papelera permite restaurar archivos, vaciarla con confirmación e incluye el historial de acciones; la pantalla Apps muestra las apps candidatas a desinstalar con su tamaño y último uso, con el acceso de uso que concede el usuario. La carpeta oculta `.criba-trash` persiste si se desinstala Criba. Criba no desinstala apps: solo guía a los ajustes del sistema.
+> **Estado: Fase 4 completa.** La papelera permite restaurar archivos, vaciarla con confirmación e incluye el historial; Apps muestra candidatas a desinstalar con tamaño y último uso; Duplicados encuentra archivos idénticos por SHA-256 conservando siempre una copia y moviendo el resto a la papelera tras verificar. La carpeta oculta `.criba-trash` persiste si se desinstala Criba. Criba no desinstala apps.
 
 ## Filosofía
 
