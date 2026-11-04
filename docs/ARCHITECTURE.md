@@ -36,7 +36,7 @@ Los archivos que el usuario confirma se mueven con un `rename` atómico en el mi
 | Copias de seguridad de Android | `allowBackup=false` y reglas de extracción vacías | La app no guarda datos que deban salir del dispositivo |
 | Distribución | GitHub Releases, APK firmado | Decisión del mantenedor |
 
-| Acceso a Descargas | `MANAGE_EXTERNAL_STORAGE` (aprobado el 2026-11-03), solo lectura de momento | En Android 10+ MediaStore no devuelve a una app normal los archivos no multimedia (APKs, zips, documentos) de Descargas, y SAF no permite elegir la carpeta Descargas en Android 11+ |
+| Acceso a Descargas | `MANAGE_EXTERNAL_STORAGE` (aprobado el 2026-11-03), lectura y, con confirmación, mover a la papelera propia | En Android 10+ MediaStore no devuelve a una app normal los archivos no multimedia (APKs, zips, documentos) de Descargas, y SAF no permite elegir la carpeta Descargas en Android 11+ |
 | Rutas | Toda ruta pasa por `isProtected(path)` (domain) antes de analizarse o tocarse | Regla de seguridad 4 |
 
 ## Pendiente de decidir

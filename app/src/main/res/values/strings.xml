@@ -11,7 +11,7 @@
     <string name="scan_permission_denied">Sin permiso de lectura de medios no se pueden analizar fotos, vídeos ni audio.</string>
     <string name="scan_error">No se pudieron analizar los archivos. Inténtalo de nuevo.</string>
     <string name="scan_scope_note">Solo se analizan fotos, vídeos y audio; los documentos, zips y APKs se buscan en Descargas con el botón de abajo.</string>
-    <string name="downloads_explanation">Para ver APKs, zips y documentos de Descargas, Android exige el permiso «Acceso a todos los archivos». Criba solo lo usa para leer y nunca borra nada.</string>
+    <string name="downloads_explanation">Para ver APKs, zips y documentos de Descargas, Android exige el permiso «Acceso a todos los archivos». Criba lo usa para leer y, solo si tú lo eliges y lo confirmas, para mover archivos a su papelera; nunca borra nada sin tu confirmación.</string>
     <string name="downloads_button">Buscar en Descargas</string>
     <string name="downloads_running">Buscando en Descargas…</string>
     <string name="downloads_old_empty">No hay archivos con más de 90 días en Descargas</string>
@@ -37,7 +37,7 @@
     <string name="report_category_old_downloads">descargas antiguas</string>
     <string name="report_category_apks">APKs</string>
     <string name="report_overlap_note">Las categorías pueden solaparse: el total no cuenta dos veces el mismo archivo. Las carpetas vacías o sin uso no se incluyen en el total.</string>
-    <string name="report_readonly_note">Criba solo lee: no borra nada.</string>
+    <string name="report_readonly_note">Analizar solo lee. Mover archivos a la papelera siempre pide tu confirmación.</string>
     <string name="review_open_button">Revisar y elegir</string>
     <string name="screenshots_move_blocked">Las capturas son imágenes: no se pueden mover hasta tener una copia verificada.</string>
     <string name="review_back">← Volver</string>

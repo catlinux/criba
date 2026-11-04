@@ -11,7 +11,7 @@
     <string name="scan_permission_denied">Sense permís de lectura de mitjans no es poden analitzar fotos, vídeos ni àudio.</string>
     <string name="scan_error">No s\'han pogut analitzar els fitxers. Torna-ho a provar.</string>
     <string name="scan_scope_note">Només s\'analitzen fotos, vídeos i àudio; els documents, zips i APKs es cerquen a Baixades amb el botó de sota.</string>
-    <string name="downloads_explanation">Per veure APKs, zips i documents de Baixades, Android exigeix el permís «Accés a tots els fitxers». Criba només el fa servir per llegir i mai esborra res.</string>
+    <string name="downloads_explanation">Per veure APKs, zips i documents de Baixades, Android exigeix el permís «Accés a tots els fitxers». Criba el fa servir per llegir i, només si ho tries i ho confirmes, per moure fitxers a la seva paperera; mai esborra res sense la teva confirmació.</string>
     <string name="downloads_button">Cerca a Baixades</string>
     <string name="downloads_running">Cercant a Baixades…</string>
     <string name="downloads_old_empty">No hi ha fitxers amb més de 90 dies a Baixades</string>
@@ -37,7 +37,7 @@
     <string name="report_category_old_downloads">baixades antigues</string>
     <string name="report_category_apks">APKs</string>
     <string name="report_overlap_note">Les categories es poden solapar: el total no compta dos cops el mateix fitxer. Les carpetes buides o sense ús no s\'inclouen al total.</string>
-    <string name="report_readonly_note">Criba només llegeix: no esborra res.</string>
+    <string name="report_readonly_note">Analitzar només llegeix. Moure fitxers a la paperera sempre demana la teva confirmació.</string>
     <string name="review_open_button">Revisa i tria</string>
     <string name="screenshots_move_blocked">Les captures són imatges: no es poden moure fins que hi hagi una còpia verificada.</string>
     <string name="review_back">← Torna</string>

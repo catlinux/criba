@@ -11,7 +11,7 @@
     <string name="scan_permission_denied">Without media read permission, photos, videos and audio cannot be analysed.</string>
     <string name="scan_error">The files could not be analysed. Try again.</string>
     <string name="scan_scope_note">Only photos, videos and audio are analysed; documents, zips and APKs are searched in Downloads with the button below.</string>
-    <string name="downloads_explanation">To see APKs, zips and documents in Downloads, Android requires the «All files access» permission. Criba only uses it to read and never deletes anything.</string>
+    <string name="downloads_explanation">To see APKs, zips and documents in Downloads, Android requires the «All files access» permission. Criba uses it to read and, only if you choose and confirm, to move files to its trash; it never deletes anything without your confirmation.</string>
     <string name="downloads_button">Search Downloads</string>
     <string name="downloads_running">Searching Downloads…</string>
     <string name="downloads_old_empty">No files older than 90 days in Downloads</string>
@@ -37,7 +37,7 @@
     <string name="report_category_old_downloads">old downloads</string>
     <string name="report_category_apks">APKs</string>
     <string name="report_overlap_note">Categories can overlap: the total does not count the same file twice. Empty or unused folders are not included in the total.</string>
-    <string name="report_readonly_note">Criba only reads: it deletes nothing.</string>
+    <string name="report_readonly_note">Scanning only reads. Moving files to the trash always asks for your confirmation.</string>
     <string name="review_open_button">Review and choose</string>
     <string name="screenshots_move_blocked">Screenshots are images: they cannot be moved until a verified backup exists.</string>
     <string name="review_back">← Back</string>

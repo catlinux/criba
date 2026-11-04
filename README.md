@@ -24,7 +24,7 @@ Criba ayuda a recuperar espacio de forma **segura y reversible**:
 ## Requisitos
 
 - Para usarla: Android 8.0 (API 26) o superior.
-- Permisos: solo lectura de medios (fotos, vídeo y audio) en Android 13 o superior; en Android 8–12, lectura del almacenamiento externo. No declara `INTERNET`. Para analizar la carpeta Descargas (APKs, zips, documentos) pedirá, solo cuando tú lo inicies, el acceso a todos los archivos (`MANAGE_EXTERNAL_STORAGE`) y lo usará únicamente para leer. Ya funciona desde la 0.5.0.
+- Permisos: solo lectura de medios (fotos, vídeo y audio) en Android 13 o superior; en Android 8–12, lectura del almacenamiento externo. No declara `INTERNET`. Para analizar la carpeta Descargas (APKs, zips, documentos) pedirá, solo cuando tú lo inicies, el acceso a todos los archivos (`MANAGE_EXTERNAL_STORAGE`) y lo usa para leer y, solo si tú eliges y confirmas, para mover archivos a la papelera.
 - Para compilarla: JDK 17 y Android SDK con la plataforma 36 (`ANDROID_HOME` definido).
 
 ## Compilar y probar

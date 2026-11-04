@@ -10,6 +10,10 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 
 - Pantalla de revisión por categoría para elegir archivos y moverlos a la papelera con confirmación que muestra el número y los MB reales; los archivos multimedia aparecen bloqueados hasta tener copia verificada.
 
+### Cambiado
+
+- Los textos de la pantalla de Descargas y del informe ya no afirman que Criba nunca borra: analizar solo lee y mover a la papelera siempre pide confirmación.
+
 ## [0.11.0] - 2026-11-04
 
 ### Añadido
