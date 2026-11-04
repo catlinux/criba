@@ -83,5 +83,9 @@ abstract class DataModule {
         @Named("storageRoot")
         @Suppress("DEPRECATION")
         fun provideStorageRoot(): String = Environment.getExternalStorageDirectory().path
+
+        @Provides
+        @Named("epochMillisClock")
+        fun provideEpochMillisClock(): () -> Long = { System.currentTimeMillis() }
     }
 }

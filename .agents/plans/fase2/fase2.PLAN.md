@@ -19,6 +19,6 @@ Objetivo: poder liberar espacio **de forma reversible**. Es la primera fase que 
 2. [x] **Room: registro y papelera (data)** · entidades, DAO, base de datos con esquema exportado, interfaces `ActionLog` y `TrashIndex` en domain con fakes para tests; migración inicial v1. Verificar en el Pixel. 0.10.0.
 3. [x] **`TrashManager` (data)** · mover, restaurar y vaciar con todas las comprobaciones del punto 7, registro antes/después y tests con `TemporaryFolder` (colisiones de nombre, origen que desaparece, enlace simbólico, tamaño que cambia, destino ocupado, fallo a mitad). Probar en el Pixel con archivos de prueba. 0.11.0.
 4. [x] **Selección y confirmación (ui)** · listas por categoría con casillas (los multimedia aparecen bloqueados con el motivo), diálogo de confirmación con archivos y MB reales, progreso y resultado. 0.12.0.
-5. [ ] **Pantallas de papelera e historial (ui)** · restaurar, vaciar (con confirmación), ver el registro, cifras honestas de «en papelera». Cierre de la fase y revisión de seguridad completa en el Pixel. 0.13.0.
+5. [x] **Pantallas de papelera e historial (ui)** · restaurar, vaciar (con confirmación), ver el registro, cifras honestas de «en papelera». Cierre de la fase y revisión de seguridad completa en el Pixel. 0.13.0.
 
 Imprevistos de diseño: el ejecutor se para y los anota aquí.

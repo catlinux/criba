@@ -11,16 +11,27 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.compose.LifecycleEventEffect
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import io.github.catlinux.criba.R
 import io.github.catlinux.criba.domain.ByteFormat
 
 @Composable
-fun HomeScreen(onOpenReport: () -> Unit, viewModel: HomeViewModel = hiltViewModel()) {
+fun HomeScreen(
+    onOpenReport: () -> Unit,
+    onOpenTrash: () -> Unit,
+    onOpenHistory: () -> Unit,
+    viewModel: HomeViewModel = hiltViewModel(),
+) {
     val storage = viewModel.storage
+    val trashBytes by viewModel.trashBytes.collectAsStateWithLifecycle()
+    LifecycleEventEffect(Lifecycle.Event.ON_RESUME) { viewModel.refreshTrashBytes() }
     Scaffold { padding ->
         Column(
             modifier = Modifier
@@ -41,8 +52,18 @@ fun HomeScreen(onOpenReport: () -> Unit, viewModel: HomeViewModel = hiltViewMode
             Text(stringResource(R.string.home_used, ByteFormat.format(storage.usedBytes)))
             Text(stringResource(R.string.home_note), style = MaterialTheme.typography.bodyMedium)
 
+            if (trashBytes > 0) {
+                Text(stringResource(R.string.home_trash_bytes, ByteFormat.format(trashBytes)))
+            }
+
             Button(onClick = onOpenReport) {
                 Text(stringResource(R.string.report_open_button))
+            }
+            Button(onClick = onOpenTrash) {
+                Text(stringResource(R.string.home_trash_button))
+            }
+            Button(onClick = onOpenHistory) {
+                Text(stringResource(R.string.home_history_button))
             }
         }
     }

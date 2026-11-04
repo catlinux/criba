@@ -5,6 +5,9 @@
     <string name="home_free">Libre: %1$s de %2$s</string>
     <string name="home_used">Usado: %1$s</string>
     <string name="home_note">Criba solo cuenta archivos. Escanear nunca borra: el modo por defecto es solo lectura.</string>
+    <string name="home_trash_bytes">En papelera: %1$s</string>
+    <string name="home_trash_button">Papelera</string>
+    <string name="home_history_button">Historial</string>
     <string name="scan_button">Buscar archivos grandes</string>
     <string name="scan_running">Buscando archivos grandes…</string>
     <string name="scan_empty">No hay archivos de 100 MB o más</string>
@@ -70,6 +73,31 @@
     <string name="trash_failure_not_in_trash">el archivo ya no figura en la papelera</string>
     <string name="trash_failure_unavailable">la papelera no está disponible</string>
     <string name="trash_failure_io">error de lectura o movimiento</string>
+    <string name="trash_title">Papelera</string>
+    <string name="trash_space_note">El espacio se libera al vaciar la papelera. Se vacía sola a los 30 días.</string>
+    <string name="trash_due_next_start">Se vaciará en el próximo arranque</string>
+    <string name="trash_empty">La papelera está vacía</string>
+    <string name="trash_uninstall_note">Si desinstalas Criba, los archivos de la papelera se quedan en la carpeta oculta .criba-trash del almacenamiento.</string>
+    <string name="trash_select_all">Seleccionar todo</string>
+    <string name="trash_clear">Quitar selección</string>
+    <string name="trash_restore">Restaurar</string>
+    <string name="trash_purge">Vaciar…</string>
+    <string name="trash_purge_confirm">Borrar definitivamente</string>
+    <string name="trash_access_explanation">Restaurar y vaciar la papelera necesita el permiso «Acceso a todos los archivos».</string>
+    <string name="trash_access_denied">Sin ese acceso no se puede restaurar ni vaciar la papelera.</string>
+    <string name="trash_load_error">No se pudo cargar la papelera: %1$s</string>
+    <string name="trash_working">Procesando la papelera…</string>
+    <string name="trash_restored_renamed">Restaurados con otro nombre: %1$s</string>
+    <string name="trash_purged_none">No se borró definitivamente ningún archivo.</string>
+    <string name="history_title">Historial de acciones</string>
+    <string name="history_empty">Aún no hay acciones</string>
+    <string name="history_error">No se pudo cargar el historial: %1$s</string>
+    <string name="history_action_moved">Movido a la papelera</string>
+    <string name="history_action_restored">Restaurado</string>
+    <string name="history_action_purged">Borrado definitivamente</string>
+    <string name="history_result_pending">Pendiente (no terminó)</string>
+    <string name="history_result_success">Correcto</string>
+    <string name="history_result_failed">Fallido</string>
     <plurals name="scan_result">
         <item quantity="one">%1$d archivo de 100 MB o más ocupa %2$s</item>
         <item quantity="other">%1$d archivos de 100 MB o más ocupan %2$s</item>
@@ -129,5 +157,29 @@
     <plurals name="review_failed_count">
         <item quantity="one">No se pudo mover %1$d archivo</item>
         <item quantity="other">No se pudieron mover %1$d archivos</item>
+    </plurals>
+    <plurals name="trash_summary">
+        <item quantity="one">En papelera: %1$d archivo · %2$s</item>
+        <item quantity="other">En papelera: %1$d archivos · %2$s</item>
+    </plurals>
+    <plurals name="trash_days_left">
+        <item quantity="one">Se vacía en %1$d día</item>
+        <item quantity="other">Se vacía en %1$d días</item>
+    </plurals>
+    <plurals name="trash_purge_confirmation">
+        <item quantity="one">¿Borrar definitivamente %1$d archivo (%2$s)? Esta acción no se puede deshacer.</item>
+        <item quantity="other">¿Borrar definitivamente %1$d archivos (%2$s)? Esta acción no se puede deshacer.</item>
+    </plurals>
+    <plurals name="trash_restored_result">
+        <item quantity="one">Se restauró %1$d archivo.</item>
+        <item quantity="other">Se restauraron %1$d archivos.</item>
+    </plurals>
+    <plurals name="trash_failed_result">
+        <item quantity="one">Falló %1$d acción</item>
+        <item quantity="other">Fallaron %1$d acciones</item>
+    </plurals>
+    <plurals name="trash_purged_result">
+        <item quantity="one">Se borró definitivamente %1$d archivo (%2$s).</item>
+        <item quantity="other">Se borraron definitivamente %1$d archivos (%2$s).</item>
     </plurals>
 </resources>

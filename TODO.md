@@ -8,7 +8,6 @@
 ## Media
 
 - Decidir `QUERY_ALL_PACKAGES` y el acceso de uso en la Fase 3: sin ellos «ya instalada» no siempre se detecta.
-- Decidir papelera propia frente a nativa (ver `docs/ARCHITECTURE.md`).
 - Actualizar dependencias señaladas por lint (AGP 8.13.x, Compose BOM, Kotlin, Hilt) cuando se apruebe la Fase 0.
 
 ## Descartado

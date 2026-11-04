@@ -5,6 +5,9 @@
     <string name="home_free">Free: %1$s of %2$s</string>
     <string name="home_used">Used: %1$s</string>
     <string name="home_note">Criba only counts files. Scanning never deletes: the default mode is read-only.</string>
+    <string name="home_trash_bytes">In trash: %1$s</string>
+    <string name="home_trash_button">Trash</string>
+    <string name="home_history_button">History</string>
     <string name="scan_button">Find large files</string>
     <string name="scan_running">Looking for large files…</string>
     <string name="scan_empty">No files of 100 MB or more</string>
@@ -70,6 +73,31 @@
     <string name="trash_failure_not_in_trash">file is no longer indexed in trash</string>
     <string name="trash_failure_unavailable">trash is unavailable</string>
     <string name="trash_failure_io">read or move error</string>
+    <string name="trash_title">Trash</string>
+    <string name="trash_space_note">Space is freed when the trash is emptied. It empties itself after 30 days.</string>
+    <string name="trash_due_next_start">Will be emptied at next startup</string>
+    <string name="trash_empty">The trash is empty</string>
+    <string name="trash_uninstall_note">If you uninstall Criba, trashed files remain in the hidden .criba-trash folder in storage.</string>
+    <string name="trash_select_all">Select all</string>
+    <string name="trash_clear">Clear selection</string>
+    <string name="trash_restore">Restore</string>
+    <string name="trash_purge">Empty…</string>
+    <string name="trash_purge_confirm">Delete permanently</string>
+    <string name="trash_access_explanation">Restoring and emptying the trash requires «All files access» permission.</string>
+    <string name="trash_access_denied">Without this access, files cannot be restored or permanently deleted.</string>
+    <string name="trash_load_error">Could not load the trash: %1$s</string>
+    <string name="trash_working">Processing trash…</string>
+    <string name="trash_restored_renamed">Restored with a different name: %1$s</string>
+    <string name="trash_purged_none">No files were permanently deleted.</string>
+    <string name="history_title">Action history</string>
+    <string name="history_empty">No actions yet</string>
+    <string name="history_error">Could not load action history: %1$s</string>
+    <string name="history_action_moved">Moved to trash</string>
+    <string name="history_action_restored">Restored</string>
+    <string name="history_action_purged">Permanently deleted</string>
+    <string name="history_result_pending">Pending (did not finish)</string>
+    <string name="history_result_success">Succeeded</string>
+    <string name="history_result_failed">Failed</string>
     <plurals name="scan_result">
         <item quantity="one">%1$d file of 100 MB or more takes up %2$s</item>
         <item quantity="other">%1$d files of 100 MB or more take up %2$s</item>
@@ -129,5 +157,29 @@
     <plurals name="review_failed_count">
         <item quantity="one">Could not move %1$d file</item>
         <item quantity="other">Could not move %1$d files</item>
+    </plurals>
+    <plurals name="trash_summary">
+        <item quantity="one">In trash: %1$d file · %2$s</item>
+        <item quantity="other">In trash: %1$d files · %2$s</item>
+    </plurals>
+    <plurals name="trash_days_left">
+        <item quantity="one">Empties in %1$d day</item>
+        <item quantity="other">Empties in %1$d days</item>
+    </plurals>
+    <plurals name="trash_purge_confirmation">
+        <item quantity="one">Permanently delete %1$d file (%2$s)? This cannot be undone.</item>
+        <item quantity="other">Permanently delete %1$d files (%2$s)? This cannot be undone.</item>
+    </plurals>
+    <plurals name="trash_restored_result">
+        <item quantity="one">Restored %1$d file.</item>
+        <item quantity="other">Restored %1$d files.</item>
+    </plurals>
+    <plurals name="trash_failed_result">
+        <item quantity="one">%1$d action failed</item>
+        <item quantity="other">%1$d actions failed</item>
+    </plurals>
+    <plurals name="trash_purged_result">
+        <item quantity="one">Permanently deleted %1$d file (%2$s).</item>
+        <item quantity="other">Permanently deleted %1$d files (%2$s).</item>
     </plurals>
 </resources>

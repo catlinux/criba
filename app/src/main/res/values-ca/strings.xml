@@ -5,6 +5,9 @@
     <string name="home_free">Lliure: %1$s de %2$s</string>
     <string name="home_used">Usat: %1$s</string>
     <string name="home_note">Criba només compta fitxers. Escanejar mai esborra: el mode per defecte és només lectura.</string>
+    <string name="home_trash_bytes">A la paperera: %1$s</string>
+    <string name="home_trash_button">Paperera</string>
+    <string name="home_history_button">Historial</string>
     <string name="scan_button">Cerca fitxers grans</string>
     <string name="scan_running">Cercant fitxers grans…</string>
     <string name="scan_empty">No hi ha fitxers de 100 MB o més</string>
@@ -70,6 +73,31 @@
     <string name="trash_failure_not_in_trash">el fitxer ja no consta a la paperera</string>
     <string name="trash_failure_unavailable">la paperera no està disponible</string>
     <string name="trash_failure_io">error de lectura o moviment</string>
+    <string name="trash_title">Paperera</string>
+    <string name="trash_space_note">L\'espai s\'allibera quan es buida la paperera. Es buida sola al cap de 30 dies.</string>
+    <string name="trash_due_next_start">Es buidarà en iniciar de nou</string>
+    <string name="trash_empty">La paperera és buida</string>
+    <string name="trash_uninstall_note">Si desinstal·les Criba, els fitxers de la paperera es queden a la carpeta oculta .criba-trash de l\'emmagatzematge.</string>
+    <string name="trash_select_all">Selecciona-ho tot</string>
+    <string name="trash_clear">Treu la selecció</string>
+    <string name="trash_restore">Restaura</string>
+    <string name="trash_purge">Buida…</string>
+    <string name="trash_purge_confirm">Esborra definitivament</string>
+    <string name="trash_access_explanation">Per restaurar i buidar la paperera cal el permís «Accés a tots els fitxers».</string>
+    <string name="trash_access_denied">Sense aquest accés no es pot restaurar ni buidar la paperera.</string>
+    <string name="trash_load_error">No s\'ha pogut carregar la paperera: %1$s</string>
+    <string name="trash_working">Processant la paperera…</string>
+    <string name="trash_restored_renamed">Restaurats amb un altre nom: %1$s</string>
+    <string name="trash_purged_none">No s\'ha esborrat definitivament cap fitxer.</string>
+    <string name="history_title">Historial d\'accions</string>
+    <string name="history_empty">Encara no hi ha accions</string>
+    <string name="history_error">No s\'ha pogut carregar l\'historial: %1$s</string>
+    <string name="history_action_moved">Mogut a la paperera</string>
+    <string name="history_action_restored">Restaurat</string>
+    <string name="history_action_purged">Esborrat definitivament</string>
+    <string name="history_result_pending">Pendent (no ha acabat)</string>
+    <string name="history_result_success">Correcte</string>
+    <string name="history_result_failed">Fallit</string>
     <plurals name="scan_result">
         <item quantity="one">%1$d fitxer de 100 MB o més ocupa %2$s</item>
         <item quantity="other">%1$d fitxers de 100 MB o més ocupen %2$s</item>
@@ -129,5 +157,29 @@
     <plurals name="review_failed_count">
         <item quantity="one">No s\'ha pogut moure %1$d fitxer</item>
         <item quantity="other">No s\'han pogut moure %1$d fitxers</item>
+    </plurals>
+    <plurals name="trash_summary">
+        <item quantity="one">A la paperera: %1$d fitxer · %2$s</item>
+        <item quantity="other">A la paperera: %1$d fitxers · %2$s</item>
+    </plurals>
+    <plurals name="trash_days_left">
+        <item quantity="one">Es buida d\'aquí a %1$d dia</item>
+        <item quantity="other">Es buida d\'aquí a %1$d dies</item>
+    </plurals>
+    <plurals name="trash_purge_confirmation">
+        <item quantity="one">Vols esborrar definitivament %1$d fitxer (%2$s)? Aquesta acció no es pot desfer.</item>
+        <item quantity="other">Vols esborrar definitivament %1$d fitxers (%2$s)? Aquesta acció no es pot desfer.</item>
+    </plurals>
+    <plurals name="trash_restored_result">
+        <item quantity="one">S\'ha restaurat %1$d fitxer.</item>
+        <item quantity="other">S\'han restaurat %1$d fitxers.</item>
+    </plurals>
+    <plurals name="trash_failed_result">
+        <item quantity="one">Ha fallat %1$d acció</item>
+        <item quantity="other">Han fallat %1$d accions</item>
+    </plurals>
+    <plurals name="trash_purged_result">
+        <item quantity="one">S\'ha esborrat definitivament %1$d fitxer (%2$s).</item>
+        <item quantity="other">S\'han esborrat definitivament %1$d fitxers (%2$s).</item>
     </plurals>
 </resources>

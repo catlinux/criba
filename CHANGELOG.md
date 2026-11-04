@@ -4,6 +4,16 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 
 ## [Sin publicar]
 
+## [0.13.0] - 2026-11-04
+
+### Añadido
+
+- Pantalla de papelera (restaurar, vaciar con confirmación, vaciado automático a los 30 días), historial de acciones y cifra de «en papelera» en la pantalla inicial; con esto la Fase 2 queda completa.
+
+### Corregido
+
+- La cabecera de las pantallas de revisión, papelera e historial ya no queda bajo la barra de estado; la cifra «En papelera» de la pantalla inicial se actualiza al volver.
+
 ## [0.12.0] - 2026-11-04
 
 ### Añadido

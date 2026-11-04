@@ -13,20 +13,31 @@ import io.github.catlinux.criba.ui.home.HomeScreen
 import io.github.catlinux.criba.ui.report.ReportScreen
 import io.github.catlinux.criba.ui.report.ReportViewModel
 import io.github.catlinux.criba.ui.review.ReviewScreen
+import io.github.catlinux.criba.ui.home.HomeViewModel
+import io.github.catlinux.criba.ui.trash.HistoryScreen
+import io.github.catlinux.criba.ui.trash.TrashScreen
 
 object Routes {
     const val HOME = "home"
     const val REPORT = "report"
     const val REVIEW = "review/{category}"
     fun review(category: ReportCategory): String = "review/${category.name}"
+    const val TRASH = "trash"
+    const val HISTORY = "history"
 }
 
 @Composable
 fun CribaNavHost() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = Routes.HOME) {
-        composable(Routes.HOME) {
-            HomeScreen(onOpenReport = { navController.navigate(Routes.REPORT) })
+        composable(Routes.HOME) { entry ->
+            val homeViewModel: HomeViewModel = hiltViewModel(entry)
+            HomeScreen(
+                onOpenReport = { navController.navigate(Routes.REPORT) },
+                onOpenTrash = { navController.navigate(Routes.TRASH) },
+                onOpenHistory = { navController.navigate(Routes.HISTORY) },
+                viewModel = homeViewModel,
+            )
         }
         composable(Routes.REPORT) { entry ->
             val reportViewModel: ReportViewModel = hiltViewModel(entry)
@@ -58,6 +69,19 @@ fun CribaNavHost() {
                     },
                 )
             }
+        }
+        composable(Routes.TRASH) { entry ->
+            val homeEntry = remember(entry) { navController.getBackStackEntry(Routes.HOME) }
+            val homeViewModel: HomeViewModel = hiltViewModel(homeEntry)
+            TrashScreen(
+                onBack = {
+                    homeViewModel.refreshTrashBytes()
+                    navController.navigateUp()
+                },
+            )
+        }
+        composable(Routes.HISTORY) {
+            HistoryScreen(onBack = { navController.navigateUp() })
         }
     }
 }
