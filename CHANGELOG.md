@@ -4,6 +4,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 
 ## [Sin publicar]
 
+## [0.16.0] - 2026-11-04
+
+### Añadido
+
+- Pantalla Apps con candidatas sin uso, tamaño desglosado y último uso, acceso de uso guiado y botón a los ajustes de la app; Criba no desinstala.
+
 ## [0.15.0] - 2026-11-04
 
 ### Añadido

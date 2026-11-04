@@ -27,6 +27,7 @@ fun HomeScreen(
     onOpenReport: () -> Unit,
     onOpenTrash: () -> Unit,
     onOpenHistory: () -> Unit,
+    onOpenApps: () -> Unit,
     viewModel: HomeViewModel = hiltViewModel(),
 ) {
     val storage = viewModel.storage
@@ -64,6 +65,9 @@ fun HomeScreen(
             }
             Button(onClick = onOpenHistory) {
                 Text(stringResource(R.string.home_history_button))
+            }
+            Button(onClick = onOpenApps) {
+                Text(stringResource(R.string.apps_home_button))
             }
         }
     }

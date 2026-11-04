@@ -98,6 +98,22 @@
     <string name="history_result_pending">Pendiente (no terminó)</string>
     <string name="history_result_success">Correcto</string>
     <string name="history_result_failed">Fallido</string>
+    <string name="apps_title">Apps</string>
+    <string name="apps_home_button">Apps</string>
+    <string name="apps_error">No se pudieron leer las apps: %1$s</string>
+    <string name="apps_no_access_title">Acceso de uso</string>
+    <string name="apps_no_access_explanation">El acceso de uso permite leer el último uso y el tamaño de otras apps. Criba no cierra ni desinstala nada; solo muestra los datos para que decidas tú.</string>
+    <string name="apps_usage_access_button">Conceder acceso de uso</string>
+    <string name="apps_no_usage_data">Sin datos de uso</string>
+    <string name="apps_no_icon_note">Solo se listan las apps con icono de lanzador.</string>
+    <string name="apps_threshold_note">Se consideran sin uso las apps con último uso anterior a 90 días o sin uso registrado en el último año.</string>
+    <string name="apps_readonly_note">Criba no desinstala apps: desde los ajustes del sistema decides tú.</string>
+    <string name="apps_no_candidates">No hay apps candidatas a desinstalar.</string>
+    <string name="apps_total_size">Tamaño total: %1$s</string>
+    <string name="apps_breakdown">App: %1$s · Datos: %2$s · Caché: %3$s</string>
+    <string name="apps_size_unknown">Sin datos de tamaño</string>
+    <string name="apps_no_use_recorded">Sin uso registrado en el último año</string>
+    <string name="apps_open_settings">Abrir ajustes de la app</string>
     <plurals name="scan_result">
         <item quantity="one">%1$d archivo de 100 MB o más ocupa %2$s</item>
         <item quantity="other">%1$d archivos de 100 MB o más ocupan %2$s</item>
@@ -181,5 +197,17 @@
     <plurals name="trash_purged_result">
         <item quantity="one">Se borró definitivamente %1$d archivo (%2$s).</item>
         <item quantity="other">Se borraron definitivamente %1$d archivos (%2$s).</item>
+    </plurals>
+    <plurals name="apps_summary">
+        <item quantity="one">%1$d candidata ocupa %2$s</item>
+        <item quantity="other">%1$d candidatas ocupan %2$s</item>
+    </plurals>
+    <plurals name="apps_summary_unknown">
+        <item quantity="one">y %1$d sin tamaño conocido</item>
+        <item quantity="other">y %1$d sin tamaño conocido</item>
+    </plurals>
+    <plurals name="apps_unused_since">
+        <item quantity="one">Sin usar desde hace %1$d día</item>
+        <item quantity="other">Sin usar desde hace %1$d días</item>
     </plurals>
 </resources>

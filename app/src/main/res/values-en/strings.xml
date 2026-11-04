@@ -98,6 +98,22 @@
     <string name="history_result_pending">Pending (did not finish)</string>
     <string name="history_result_success">Succeeded</string>
     <string name="history_result_failed">Failed</string>
+    <string name="apps_title">Apps</string>
+    <string name="apps_home_button">Apps</string>
+    <string name="apps_error">Apps could not be read: %1$s</string>
+    <string name="apps_no_access_title">Usage access</string>
+    <string name="apps_no_access_explanation">Usage access lets Criba read the last use and size of other apps. Criba does not close or uninstall anything; it only shows the data so you decide.</string>
+    <string name="apps_usage_access_button">Grant usage access</string>
+    <string name="apps_no_usage_data">No usage data</string>
+    <string name="apps_no_icon_note">Only apps with a launcher icon are listed.</string>
+    <string name="apps_threshold_note">Apps whose last use is older than 90 days or with no recorded use in the last year are considered unused.</string>
+    <string name="apps_readonly_note">Criba does not uninstall apps: you decide from the system settings.</string>
+    <string name="apps_no_candidates">No apps are candidates for uninstalling.</string>
+    <string name="apps_total_size">Total size: %1$s</string>
+    <string name="apps_breakdown">App: %1$s · Data: %2$s · Cache: %3$s</string>
+    <string name="apps_size_unknown">No size data</string>
+    <string name="apps_no_use_recorded">No recorded use in the last year</string>
+    <string name="apps_open_settings">Open app settings</string>
     <plurals name="scan_result">
         <item quantity="one">%1$d file of 100 MB or more takes up %2$s</item>
         <item quantity="other">%1$d files of 100 MB or more take up %2$s</item>
@@ -181,5 +197,17 @@
     <plurals name="trash_purged_result">
         <item quantity="one">Permanently deleted %1$d file (%2$s).</item>
         <item quantity="other">Permanently deleted %1$d files (%2$s).</item>
+    </plurals>
+    <plurals name="apps_summary">
+        <item quantity="one">%1$d candidate takes up %2$s</item>
+        <item quantity="other">%1$d candidates take up %2$s</item>
+    </plurals>
+    <plurals name="apps_summary_unknown">
+        <item quantity="one">and %1$d with unknown size</item>
+        <item quantity="other">and %1$d with unknown size</item>
+    </plurals>
+    <plurals name="apps_unused_since">
+        <item quantity="one">Unused for %1$d day</item>
+        <item quantity="other">Unused for %1$d days</item>
     </plurals>
 </resources>

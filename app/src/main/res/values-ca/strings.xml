@@ -98,6 +98,22 @@
     <string name="history_result_pending">Pendent (no ha acabat)</string>
     <string name="history_result_success">Correcte</string>
     <string name="history_result_failed">Fallit</string>
+    <string name="apps_title">Apps</string>
+    <string name="apps_home_button">Apps</string>
+    <string name="apps_error">No s\'han pogut llegir les apps: %1$s</string>
+    <string name="apps_no_access_title">Accés d\'ús</string>
+    <string name="apps_no_access_explanation">L\'accés d\'ús permet llegir l\'últim ús i la mida d\'altres apps. Criba no tanca ni desinstal·la res; només mostra les dades perquè decideixis tu.</string>
+    <string name="apps_usage_access_button">Concedeix accés d\'ús</string>
+    <string name="apps_no_usage_data">Sense dades d\'ús</string>
+    <string name="apps_no_icon_note">Només es llisten les apps amb icona de llançador.</string>
+    <string name="apps_threshold_note">Es consideren sense ús les apps amb últim ús anterior a 90 dies o sense ús registrat en el darrer any.</string>
+    <string name="apps_readonly_note">Criba no desinstal·la apps: des dels ajustos del sistema decideixes tu.</string>
+    <string name="apps_no_candidates">No hi ha apps candidates a desinstal·lar.</string>
+    <string name="apps_total_size">Mida total: %1$s</string>
+    <string name="apps_breakdown">App: %1$s · Dades: %2$s · Memòria cau: %3$s</string>
+    <string name="apps_size_unknown">Sense dades de mida</string>
+    <string name="apps_no_use_recorded">Sense ús registrat en el darrer any</string>
+    <string name="apps_open_settings">Obre els ajustos de l\'app</string>
     <plurals name="scan_result">
         <item quantity="one">%1$d fitxer de 100 MB o més ocupa %2$s</item>
         <item quantity="other">%1$d fitxers de 100 MB o més ocupen %2$s</item>
@@ -181,5 +197,17 @@
     <plurals name="trash_purged_result">
         <item quantity="one">S\'ha esborrat definitivament %1$d fitxer (%2$s).</item>
         <item quantity="other">S\'han esborrat definitivament %1$d fitxers (%2$s).</item>
+    </plurals>
+    <plurals name="apps_summary">
+        <item quantity="one">%1$d candidata ocupa %2$s</item>
+        <item quantity="other">%1$d candidates ocupen %2$s</item>
+    </plurals>
+    <plurals name="apps_summary_unknown">
+        <item quantity="one">i %1$d sense mida coneguda</item>
+        <item quantity="other">i %1$d sense mida coneguda</item>
+    </plurals>
+    <plurals name="apps_unused_since">
+        <item quantity="one">Sense usar des de fa %1$d dia</item>
+        <item quantity="other">Sense usar des de fa %1$d dies</item>
     </plurals>
 </resources>

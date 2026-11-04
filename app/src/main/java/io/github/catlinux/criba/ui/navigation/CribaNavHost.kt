@@ -14,6 +14,7 @@ import io.github.catlinux.criba.ui.report.ReportScreen
 import io.github.catlinux.criba.ui.report.ReportViewModel
 import io.github.catlinux.criba.ui.review.ReviewScreen
 import io.github.catlinux.criba.ui.home.HomeViewModel
+import io.github.catlinux.criba.ui.apps.AppsScreen
 import io.github.catlinux.criba.ui.trash.HistoryScreen
 import io.github.catlinux.criba.ui.trash.TrashScreen
 
@@ -24,6 +25,7 @@ object Routes {
     fun review(category: ReportCategory): String = "review/${category.name}"
     const val TRASH = "trash"
     const val HISTORY = "history"
+    const val APPS = "apps"
 }
 
 @Composable
@@ -36,6 +38,7 @@ fun CribaNavHost() {
                 onOpenReport = { navController.navigate(Routes.REPORT) },
                 onOpenTrash = { navController.navigate(Routes.TRASH) },
                 onOpenHistory = { navController.navigate(Routes.HISTORY) },
+                onOpenApps = { navController.navigate(Routes.APPS) },
                 viewModel = homeViewModel,
             )
         }
@@ -82,6 +85,9 @@ fun CribaNavHost() {
         }
         composable(Routes.HISTORY) {
             HistoryScreen(onBack = { navController.navigateUp() })
+        }
+        composable(Routes.APPS) {
+            AppsScreen(onBack = { navController.navigateUp() })
         }
     }
 }
