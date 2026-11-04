@@ -18,6 +18,10 @@ La dependencia apunta siempre hacia abajo; `data` se enlaza con `domain` mediant
 
 Escáneres como casos de uso independientes y testeables: `LargeFilesScanner`, `DuplicatesScanner`, `UnusedAppsScanner`, `BackupVerifier`. Más: papelera, registro de acciones y `isProtected(path)` (punto único de decisión sobre rutas protegidas).
 
+## Fuente de apps
+
+`PackageManagerAppSource` lista solo apps con icono de lanzador (bloque `<queries>` con `MAIN`/`LAUNCHER` y `MAIN`/`HOME`; sin `QUERY_ALL_PACKAGES`) y marca como protegidas el lanzador y el teclado activos y los titulares de los roles de lanzador, teléfono y SMS. El tamaño y el último uso exigen el acceso de uso (`PACKAGE_USAGE_STATS`, comprobado con `AppOpsManager`): sin él, `sizes` y `lastUsedEpochSeconds` quedan a `null` y no se consultan `StorageStatsManager` ni `UsageStatsManager`. En `StorageStats`, `dataBytes` ya incluye la caché, así que la capa data mapea `AppSizes` restando la caché de `dataBytes`; de lo contrario `totalBytes` la contaría dos veces.
+
 ## Papelera propia
 
 Los archivos que el usuario confirma se mueven con un `rename` atómico en el mismo volumen a `<almacenamiento>/.criba-trash/<id>/` (raíz del almacenamiento compartido: `Android/data` es otro montaje y el `rename` falla con EXDEV desde Descargas, comprobado en un Pixel; no se cae a copiar+borrar); nunca se copian ni se sobrescriben, y el espacio no se libera hasta vaciarla. El orden es: registrar la intención (`PENDING`) en `action_log` con la ruta original y el id de papelera, comprobar que la ruta canónica no es protegida, que es un archivo regular y que tamaño y fecha coinciden con el escaneo, mover con `ATOMIC_MOVE`, verificar origen y destino, añadir el elemento a `trash_item` y registrar el resultado. Si el proceso muere entre el movimiento y el índice, el registro queda `PENDING` con la ruta original y el archivo está en `.criba-trash/<id>/`: es una situación recuperable. Restaurar y vaciar vuelven a comprobar que la ruta canónica sigue dentro de la papelera; solo el vaciado borra definitivamente, y solo dentro de `.criba-trash/<id>/`.

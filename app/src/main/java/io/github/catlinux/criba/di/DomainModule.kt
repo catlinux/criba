@@ -1,16 +1,20 @@
 package io.github.catlinux.criba.di
 
+import android.content.Context
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import io.github.catlinux.criba.domain.ApkInspector
+import io.github.catlinux.criba.domain.AppSource
 import io.github.catlinux.criba.domain.FileSource
 import io.github.catlinux.criba.domain.InstalledAppsSource
 import io.github.catlinux.criba.domain.LargeFilesScanner
 import io.github.catlinux.criba.domain.OldApksScanner
 import io.github.catlinux.criba.domain.OldDownloadsScanner
 import io.github.catlinux.criba.domain.ScreenshotsScanner
+import io.github.catlinux.criba.domain.UnusedAppsScanner
 import javax.inject.Named
 
 @Module
@@ -32,4 +36,10 @@ object DomainModule {
 
     @Provides
     fun provideScreenshotsScanner(source: FileSource): ScreenshotsScanner = ScreenshotsScanner(source)
+
+    @Provides
+    fun provideUnusedAppsScanner(
+        source: AppSource,
+        @ApplicationContext context: Context,
+    ): UnusedAppsScanner = UnusedAppsScanner(source, context.packageName)
 }

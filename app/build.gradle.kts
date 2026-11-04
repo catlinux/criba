@@ -14,8 +14,8 @@ android {
         applicationId = "io.github.catlinux.criba"
         minSdk = 26
         targetSdk = 36
-        versionCode = 14
-        versionName = "0.14.0"
+        versionCode = 15
+        versionName = "0.15.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 

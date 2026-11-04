@@ -4,6 +4,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 
 ## [Sin publicar]
 
+## [0.15.0] - 2026-11-04
+
+### Añadido
+
+- Fuente de datos real de apps (tamaño, último uso) sobre PackageManager, StorageStatsManager y UsageStatsManager, con comprobación del acceso de uso; permiso PACKAGE_USAGE_STATS y consulta de apps con icono de lanzador; sin QUERY_ALL_PACKAGES; todavía sin interfaz.
+
 ## [0.14.0] - 2026-11-04
 
 ### Añadido

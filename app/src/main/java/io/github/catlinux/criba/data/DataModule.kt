@@ -14,16 +14,20 @@ import io.github.catlinux.criba.data.db.CribaDatabase
 import io.github.catlinux.criba.data.db.RoomActionLog
 import io.github.catlinux.criba.data.db.RoomTrashIndex
 import io.github.catlinux.criba.data.db.TrashDao
+import io.github.catlinux.criba.data.apps.AppOpsUsageAccess
+import io.github.catlinux.criba.data.apps.PackageManagerAppSource
 import io.github.catlinux.criba.data.trash.FileTrashEngine
 import io.github.catlinux.criba.data.trash.FileTrashManager
 import io.github.catlinux.criba.domain.ActionLog
 import io.github.catlinux.criba.domain.ApkInspector
+import io.github.catlinux.criba.domain.AppSource
 import io.github.catlinux.criba.domain.DeletionPolicy
 import io.github.catlinux.criba.domain.FileSource
 import io.github.catlinux.criba.domain.InstalledAppsSource
 import io.github.catlinux.criba.domain.StorageInfoSource
 import io.github.catlinux.criba.domain.TrashIndex
 import io.github.catlinux.criba.domain.TrashManager
+import io.github.catlinux.criba.domain.UsageAccess
 import java.io.File
 import javax.inject.Named
 import javax.inject.Singleton
@@ -46,6 +50,12 @@ abstract class DataModule {
 
     @Binds
     abstract fun bindInstalledAppsSource(impl: PackageManagerInstalledApps): InstalledAppsSource
+
+    @Binds
+    abstract fun bindAppSource(impl: PackageManagerAppSource): AppSource
+
+    @Binds
+    abstract fun bindUsageAccess(impl: AppOpsUsageAccess): UsageAccess
 
     companion object {
         @Provides
