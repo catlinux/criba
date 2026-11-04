@@ -4,6 +4,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 
 ## [Sin publicar]
 
+## [0.20.0] - 2026-11-04
+
+### Añadido
+
+- Modelo de dominio de la copia verificada (BackupVerifier, BackupGate, política de destino); todavía sin copia real ni interfaz.
+
 ## [0.19.0] - 2026-11-04
 
 ### Añadido
