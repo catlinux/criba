@@ -15,7 +15,7 @@ Objetivo: poder liberar espacio **de forma reversible**. Es la primera fase que 
 
 ## Pasos (ejecutor por defecto: AgentRelay con esfuerzo medio o alto; revisión y pruebas en dispositivo: sesión principal)
 
-1. [ ] **`DeletionPolicy` y `ConfirmedDeletion` (domain)** · reglas 1, 2 y 4 de arriba, con tests exhaustivos (extensiones multimedia en mayúsculas, rutas protegidas, dentro de la papelera, sin extensión). 0.9.0.
+1. [x] **`DeletionPolicy` y `ConfirmedDeletion` (domain)** · reglas 1, 2 y 4 de arriba, con tests exhaustivos (extensiones multimedia en mayúsculas, rutas protegidas, dentro de la papelera, sin extensión). 0.9.0.
 2. [ ] **Room: registro y papelera (data)** · entidades, DAO, base de datos con esquema exportado, interfaces `ActionLog` y `TrashIndex` en domain con fakes para tests; migración inicial v1. Verificar en el Pixel. 0.10.0.
 3. [ ] **`TrashManager` (data)** · mover, restaurar y vaciar con todas las comprobaciones del punto 7, registro antes/después y tests con `TemporaryFolder` (colisiones de nombre, origen que desaparece, enlace simbólico, tamaño que cambia, destino ocupado, fallo a mitad). Probar en el Pixel con archivos de prueba. 0.11.0.
 4. [ ] **Selección y confirmación (ui)** · listas por categoría con casillas (los multimedia aparecen bloqueados con el motivo), diálogo de confirmación con archivos y MB reales, progreso y resultado. 0.12.0.
