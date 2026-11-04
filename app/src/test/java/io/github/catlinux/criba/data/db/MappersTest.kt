@@ -51,7 +51,7 @@ class MappersTest {
             val item = TrashItem(
                 id = "t-1",
                 originalPath = "/storage/emulated/0/Download/a.zip",
-                trashPath = "/storage/emulated/0/Android/data/io.github.catlinux.criba/files/trash/t-1",
+                trashPath = "/storage/emulated/0/.criba-trash/t-1",
                 bytes = 512,
                 sha256 = "abc",
                 trashedAtEpochMillis = 1_700_000_000_000,

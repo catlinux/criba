@@ -29,7 +29,7 @@ class CribaDatabaseTest {
     private fun item(id: String, bytes: Long = 100, trashedAt: Long = 0) = TrashItem(
         id = id,
         originalPath = "/storage/emulated/0/Download/$id",
-        trashPath = "/storage/emulated/0/Android/data/io.github.catlinux.criba/files/trash/$id",
+        trashPath = "/storage/emulated/0/.criba-trash/$id",
         bytes = bytes,
         sha256 = null,
         trashedAtEpochMillis = trashedAt,

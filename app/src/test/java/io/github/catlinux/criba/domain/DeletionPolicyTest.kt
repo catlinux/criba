@@ -87,14 +87,14 @@ class DeletionPolicyTest {
     @Test
     fun `un archivo dentro de la papelera propia esta protegido`() =
         assertProtected(
-            "/storage/emulated/0/Android/data/io.github.catlinux.criba/files/trash/abc/x.zip",
+            "/storage/emulated/0/.criba-trash/abc/x.zip",
             ProtectedReason.INSIDE_TRASH,
         )
 
     @Test
     fun `la propia carpeta de la papelera esta protegida`() =
         assertProtected(
-            "/storage/emulated/0/Android/data/io.github.catlinux.criba/files/trash",
+            "/storage/emulated/0/.criba-trash",
             ProtectedReason.INSIDE_TRASH,
         )
 

@@ -18,6 +18,10 @@ La dependencia apunta siempre hacia abajo; `data` se enlaza con `domain` mediant
 
 Escáneres como casos de uso independientes y testeables: `LargeFilesScanner`, `DuplicatesScanner`, `UnusedAppsScanner`, `BackupVerifier`. Más: papelera, registro de acciones y `isProtected(path)` (punto único de decisión sobre rutas protegidas).
 
+## Papelera propia
+
+Los archivos que el usuario confirma se mueven con un `rename` atómico en el mismo volumen a `<almacenamiento>/.criba-trash/<id>/` (raíz del almacenamiento compartido: `Android/data` es otro montaje y el `rename` falla con EXDEV desde Descargas, comprobado en un Pixel; no se cae a copiar+borrar); nunca se copian ni se sobrescriben, y el espacio no se libera hasta vaciarla. El orden es: registrar la intención (`PENDING`) en `action_log` con la ruta original y el id de papelera, comprobar que la ruta canónica no es protegida, que es un archivo regular y que tamaño y fecha coinciden con el escaneo, mover con `ATOMIC_MOVE`, verificar origen y destino, añadir el elemento a `trash_item` y registrar el resultado. Si el proceso muere entre el movimiento y el índice, el registro queda `PENDING` con la ruta original y el archivo está en `.criba-trash/<id>/`: es una situación recuperable. Restaurar y vaciar vuelven a comprobar que la ruta canónica sigue dentro de la papelera; solo el vaciado borra definitivamente, y solo dentro de `.criba-trash/<id>/`.
+
 ## Decisiones técnicas
 
 | Tema | Decisión | Motivo |

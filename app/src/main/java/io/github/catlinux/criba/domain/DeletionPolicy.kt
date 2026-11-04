@@ -20,7 +20,8 @@ sealed interface DeletionVerdict {
 enum class ProtectedReason { PROTECTED_PATH, NOT_ABSOLUTE, INSIDE_TRASH }
 
 object DeletionPolicy {
-    const val TRASH_SEGMENT = "/Android/data/io.github.catlinux.criba/files/trash/"
+    const val TRASH_DIRECTORY_NAME = ".criba-trash"
+    const val TRASH_SEGMENT = "/$TRASH_DIRECTORY_NAME/"
 
     private val MEDIA_EXTENSIONS = setOf(
         "jpg", "jpeg", "png", "gif", "webp", "heic", "heif", "bmp", "dng", "raw",
@@ -43,7 +44,7 @@ object DeletionPolicy {
     private fun isInsideTrash(path: String): Boolean {
         val normalized = path.replace('\\', '/')
         if (normalized.contains(TRASH_SEGMENT, ignoreCase = true)) return true
-        return normalized.trimEnd('/').endsWith("/trash", ignoreCase = true)
+        return normalized.trimEnd('/').endsWith("/$TRASH_DIRECTORY_NAME", ignoreCase = true)
     }
 
     /** Extensión tras el último punto del último segmento; null si no hay punto o no hay nada detrás. */

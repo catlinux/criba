@@ -4,6 +4,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 
 ## [Sin publicar]
 
+## [0.11.0] - 2026-11-04
+
+### Añadido
+
+- TrashManager (mover a la papelera propia en `.criba-trash` de la raíz del almacenamiento, restaurar y vaciar) con comprobaciones previas y posteriores y registro de cada acción; todavía sin interfaz, la app no ofrece borrar.
+
 ## [0.10.0] - 2026-11-04
 
 ### Añadido

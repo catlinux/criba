@@ -1,6 +1,7 @@
 package io.github.catlinux.criba.data
 
 import android.content.Context
+import android.os.Environment
 import androidx.room.Room
 import dagger.Binds
 import dagger.Module
@@ -13,12 +14,17 @@ import io.github.catlinux.criba.data.db.CribaDatabase
 import io.github.catlinux.criba.data.db.RoomActionLog
 import io.github.catlinux.criba.data.db.RoomTrashIndex
 import io.github.catlinux.criba.data.db.TrashDao
+import io.github.catlinux.criba.data.trash.FileTrashEngine
+import io.github.catlinux.criba.data.trash.FileTrashManager
 import io.github.catlinux.criba.domain.ActionLog
 import io.github.catlinux.criba.domain.ApkInspector
+import io.github.catlinux.criba.domain.DeletionPolicy
 import io.github.catlinux.criba.domain.FileSource
 import io.github.catlinux.criba.domain.InstalledAppsSource
 import io.github.catlinux.criba.domain.StorageInfoSource
 import io.github.catlinux.criba.domain.TrashIndex
+import io.github.catlinux.criba.domain.TrashManager
+import java.io.File
 import javax.inject.Named
 import javax.inject.Singleton
 
@@ -58,5 +64,19 @@ abstract class DataModule {
 
         @Provides
         fun provideTrashIndex(dao: TrashDao): TrashIndex = RoomTrashIndex(dao)
+
+        @Provides
+        @Singleton
+        fun provideTrashManager(
+            @ApplicationContext context: Context,
+            log: ActionLog,
+            index: TrashIndex,
+        ): TrashManager {
+            // Android/data es otro montaje: desde Descargas el rename atómico falla con EXDEV.
+            // La raíz del almacenamiento compartido sí es el mismo montaje.
+            @Suppress("DEPRECATION")
+            val trashRoot = File(Environment.getExternalStorageDirectory(), DeletionPolicy.TRASH_DIRECTORY_NAME)
+            return FileTrashManager(FileTrashEngine(trashRoot = trashRoot, log = log, index = index))
+        }
     }
 }
