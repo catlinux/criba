@@ -14,8 +14,10 @@ Objetivo: encontrar archivos con contenido idéntico (SHA-256) y proponer borrar
 
 ## Pasos (ejecutor: AgentRelay; revisión y pruebas en el Pixel: sesión principal)
 
-1. [ ] **Dominio (0.17.0)** · `ContentHasher`, `DuplicateGroup`, `DuplicatesScanner` (agrupación por tamaño, hash, ilegibles ignorados, grupos <2 descartados, orden por `reclaimableBytes` desc.), `KeepPolicy` y `DuplicateSelection` (invariante «al menos una conservada»), con tests exhaustivos (tamaño 0, mismo tamaño distinto contenido, ilegible, tres copias, invariante, desempates, cancelación, progreso).
-2. [ ] **Datos (0.18.0)** · `FileContentHasher` (SHA-256 en streaming sobre la ruta absoluta, 64 KiB de búfer, comprobación de que el archivo no es symlink ni protegido), verificación previa al borrado (`DuplicateRecheck`), módulo Hilt. Prueba en el Pixel con archivos duplicados creados a propósito y comparación con `sha256sum` de adb.
+1. [x] **Dominio (0.17.0)** · `ContentHasher`, `DuplicateGroup`, `DuplicatesScanner` (agrupación por tamaño, hash, ilegibles ignorados, grupos <2 descartados, orden por `reclaimableBytes` desc.), `KeepPolicy` y `DuplicateSelection` (invariante «al menos una conservada»), con tests exhaustivos (tamaño 0, mismo tamaño distinto contenido, ilegible, tres copias, invariante, desempates, cancelación, progreso).
+2. [x] **Datos (0.18.0)** · `FileContentHasher` (SHA-256 en streaming sobre la ruta absoluta, 64 KiB de búfer, comprobación de que el archivo no es symlink ni protegido), verificación previa al borrado (`DuplicateRecheck`), módulo Hilt. Prueba en el Pixel con archivos duplicados creados a propósito y comparación con `sha256sum` de adb.
 3. [ ] **Interfaz y cierre (0.19.0)** · categoría «Duplicados» en informe y revisión (grupos expandibles, copia conservada marcada, no se puede desmarcar la última, progreso con cancelar, multimedia `NEEDS_BACKUP`), integración con `ConfirmedDeletion` y papelera, textos es/ca/en. Revisión completa en el Pixel.
+
+Desviación decidida en el paso 3: los duplicados tienen pantalla propia (ruta `duplicates`, botón en Home) en lugar de una categoría del informe; así no se tocan los totales del informe ni `ReportViewModel`. `ReportCategory.DUPLICATES` queda descartado.
 
 Imprevistos de diseño: el ejecutor se para y los anota aquí.
