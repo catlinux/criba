@@ -2,7 +2,7 @@
 
 Limpiador de almacenamiento para Android, seguro y sin publicidad. Encuentra archivos grandes, duplicados y apps sin uso, y verifica una copia de seguridad antes de borrar nada.
 
-> **Estado: Fase 1 completa (informe de solo lectura).** La app ya cuenta los archivos grandes, las capturas de pantalla, los archivos y APKs antiguos de Descargas y las carpetas vacías o sin uso, y reúne todo en un informe de espacio recuperable sin duplicar archivos. Todavía no borra nada. Ver [docs/ROADMAP.md](docs/ROADMAP.md).
+> **Estado: Fase 2 en curso.** Se pueden mover archivos no multimedia a la papelera de Criba desde el informe, con confirmación explícita; todavía no hay pantalla de papelera y ningún archivo se borra definitivamente. Ver [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Filosofía
 

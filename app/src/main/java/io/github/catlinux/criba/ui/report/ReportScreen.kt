@@ -48,7 +48,11 @@ import io.github.catlinux.criba.domain.RecoverableSummary
 import io.github.catlinux.criba.domain.ReportCategory
 
 @Composable
-fun ReportScreen(onBack: () -> Unit, viewModel: ReportViewModel = hiltViewModel()) {
+fun ReportScreen(
+    onBack: () -> Unit,
+    onReview: (ReportCategory) -> Unit,
+    viewModel: ReportViewModel = hiltViewModel(),
+) {
     val summary by viewModel.recoverableSummary.collectAsStateWithLifecycle()
     val largeFilesState by viewModel.largeFilesState.collectAsStateWithLifecycle()
     val downloadsState by viewModel.downloadsState.collectAsStateWithLifecycle()
@@ -150,6 +154,7 @@ fun ReportScreen(onBack: () -> Unit, viewModel: ReportViewModel = hiltViewModel(
                                 ByteFormat.format(state.totalBytes),
                             ),
                         )
+                        ReviewButton(ReportCategory.LARGE_FILES, onReview)
                     }
                 LargeFilesState.Failed ->
                     Text(
@@ -199,6 +204,7 @@ fun ReportScreen(onBack: () -> Unit, viewModel: ReportViewModel = hiltViewModel(
                         color = MaterialTheme.colorScheme.error,
                     )
             }
+            Text(stringResource(R.string.screenshots_move_blocked), style = MaterialTheme.typography.bodySmall)
 
             if (permissionDenied) {
                 Text(
@@ -212,6 +218,7 @@ fun ReportScreen(onBack: () -> Unit, viewModel: ReportViewModel = hiltViewModel(
             DownloadsSection(
                 state = downloadsState,
                 onScan = viewModel::scanDownloads,
+                onReview = onReview,
             )
 
             FoldersSection(
@@ -269,7 +276,11 @@ private fun categoryLabel(category: ReportCategory): Int =
     }
 
 @Composable
-private fun DownloadsSection(state: DownloadsState, onScan: () -> Unit) {
+private fun DownloadsSection(
+    state: DownloadsState,
+    onScan: () -> Unit,
+    onReview: (ReportCategory) -> Unit,
+) {
     val context = LocalContext.current
     var accessDenied by rememberSaveable { mutableStateOf(false) }
 
@@ -334,6 +345,7 @@ private fun DownloadsSection(state: DownloadsState, onScan: () -> Unit) {
                         ByteFormat.format(state.oldFilesBytes),
                     ),
                 )
+                ReviewButton(ReportCategory.OLD_DOWNLOADS, onReview)
             }
             if (state.apkCount == 0) {
                 Text(stringResource(R.string.downloads_apk_empty))
@@ -346,6 +358,7 @@ private fun DownloadsSection(state: DownloadsState, onScan: () -> Unit) {
                         ByteFormat.format(state.apkBytes),
                     ),
                 )
+                ReviewButton(ReportCategory.APKS, onReview)
             }
         }
         DownloadsState.Failed ->
@@ -360,6 +373,13 @@ private fun DownloadsSection(state: DownloadsState, onScan: () -> Unit) {
             stringResource(R.string.downloads_access_denied),
             color = MaterialTheme.colorScheme.error,
         )
+    }
+}
+
+@Composable
+private fun ReviewButton(category: ReportCategory, onReview: (ReportCategory) -> Unit) {
+    Button(onClick = { onReview(category) }) {
+        Text(stringResource(R.string.review_open_button))
     }
 }
 

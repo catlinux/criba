@@ -38,6 +38,38 @@
     <string name="report_category_apks">APKs</string>
     <string name="report_overlap_note">Las categorías pueden solaparse: el total no cuenta dos veces el mismo archivo. Las carpetas vacías o sin uso no se incluyen en el total.</string>
     <string name="report_readonly_note">Criba solo lee: no borra nada.</string>
+    <string name="review_open_button">Revisar y elegir</string>
+    <string name="screenshots_move_blocked">Las capturas son imágenes: no se pueden mover hasta tener una copia verificada.</string>
+    <string name="review_back">← Volver</string>
+    <string name="review_title">Revisar: %1$s</string>
+    <string name="review_access_explanation">Mover archivos a la papelera de Criba necesita el permiso «Acceso a todos los archivos».</string>
+    <string name="review_access_denied">Sin ese acceso no se pueden mover archivos.</string>
+    <string name="review_access_settings">Abrir ajustes</string>
+    <string name="review_move_button">Mover a la papelera</string>
+    <string name="review_moving">Moviendo archivos a la papelera…</string>
+    <string name="review_select_all">Seleccionar todo lo posible</string>
+    <string name="review_clear">Quitar selección</string>
+    <string name="review_needs_backup">Foto, vídeo o audio: no se puede mover hasta tener una copia verificada.</string>
+    <string name="review_blocked">Protegido: Criba no lo toca.</string>
+    <string name="review_confirmation_error">No se pudo validar la selección. Vuelve a revisarla.</string>
+    <string name="review_confirmation_note">Se guardan en la papelera de Criba (carpeta oculta) y no se borran definitivamente. El espacio no se libera hasta que se vacíe la papelera.</string>
+    <string name="review_cancel">Cancelar</string>
+    <string name="review_result_note">Los archivos se guardan en la papelera de Criba; no se han borrado definitivamente.</string>
+    <string name="review_moved_none">No se movió ningún archivo.</string>
+    <string name="review_return_report">Volver al informe</string>
+    <string name="review_error">No se pudo completar el movimiento: %1$s</string>
+    <string name="trash_failure_protected">ruta protegida</string>
+    <string name="trash_failure_not_regular">no es un archivo regular</string>
+    <string name="trash_failure_symlink">la ruta contiene un enlace simbólico</string>
+    <string name="trash_failure_missing">el archivo ya no existe</string>
+    <string name="trash_failure_changed">el archivo cambió desde el análisis</string>
+    <string name="trash_failure_different_volume">no se puede mover de forma atómica entre volúmenes</string>
+    <string name="trash_failure_target_exists">ya existe un archivo con ese nombre en la papelera</string>
+    <string name="trash_failure_verify">no se pudo verificar el movimiento</string>
+    <string name="trash_failure_outside_trash">el archivo no está en la papelera de Criba</string>
+    <string name="trash_failure_not_in_trash">el archivo ya no figura en la papelera</string>
+    <string name="trash_failure_unavailable">la papelera no está disponible</string>
+    <string name="trash_failure_io">error de lectura o movimiento</string>
     <plurals name="scan_result">
         <item quantity="one">%1$d archivo de 100 MB o más ocupa %2$s</item>
         <item quantity="other">%1$d archivos de 100 MB o más ocupan %2$s</item>
@@ -77,5 +109,25 @@
     <plurals name="report_summary_total">
         <item quantity="one">Hasta %1$s en %2$d archivo</item>
         <item quantity="other">Hasta %1$s en %2$d archivos</item>
+    </plurals>
+    <plurals name="review_selection_summary">
+        <item quantity="one">%1$d seleccionado · %2$s</item>
+        <item quantity="other">%1$d seleccionados · %2$s</item>
+    </plurals>
+    <plurals name="review_confirm_title">
+        <item quantity="one">Mover %1$d archivo (%2$s) a la papelera</item>
+        <item quantity="other">Mover %1$d archivos (%2$s) a la papelera</item>
+    </plurals>
+    <plurals name="review_more_files">
+        <item quantity="one">y %1$d más</item>
+        <item quantity="other">y %1$d más</item>
+    </plurals>
+    <plurals name="review_moved_result">
+        <item quantity="one">Se movió %1$d archivo (%2$s) a la papelera</item>
+        <item quantity="other">Se movieron %1$d archivos (%2$s) a la papelera</item>
+    </plurals>
+    <plurals name="review_failed_count">
+        <item quantity="one">No se pudo mover %1$d archivo</item>
+        <item quantity="other">No se pudieron mover %1$d archivos</item>
     </plurals>
 </resources>

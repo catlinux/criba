@@ -16,7 +16,9 @@ import io.github.catlinux.criba.domain.ReportCategory
 import io.github.catlinux.criba.domain.ScanFile
 import io.github.catlinux.criba.domain.ScreenshotsScanner
 import io.github.catlinux.criba.domain.UnusedFoldersScanner
+import io.github.catlinux.criba.domain.toDeletionCandidate
 import javax.inject.Inject
+import javax.inject.Named
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -76,6 +78,7 @@ class ReportViewModel @Inject constructor(
     private val oldApksScanner: OldApksScanner,
     private val screenshotsScanner: ScreenshotsScanner,
     private val folderSourceFactory: SafFolderSourceFactory,
+    @param:Named("storageRoot") private val storageRoot: String,
 ) : ViewModel() {
     private val _largeFilesState = MutableStateFlow<LargeFilesState>(LargeFilesState.Idle)
     val largeFilesState: StateFlow<LargeFilesState> = _largeFilesState.asStateFlow()
@@ -90,6 +93,7 @@ class ReportViewModel @Inject constructor(
     val foldersState: StateFlow<FoldersState> = _foldersState.asStateFlow()
 
     private val filesByCategory = MutableStateFlow<Map<ReportCategory, List<ScanFile>>>(emptyMap())
+    val scannedFiles: StateFlow<Map<ReportCategory, List<ScanFile>>> = filesByCategory.asStateFlow()
 
     val recoverableSummary: StateFlow<RecoverableSummary> = filesByCategory
         .map { RecoverableCalculator.summarize(it) }
@@ -175,6 +179,30 @@ class ReportViewModel @Inject constructor(
             } catch (e: Exception) {
                 FoldersState.Failed
             }
+        }
+    }
+
+    fun removeMoved(movedOriginalPaths: Set<String>) {
+        if (movedOriginalPaths.isEmpty()) return
+        val updated = filesByCategory.value.mapValues { (_, files) ->
+            files.filterNot { file -> file.toDeletionCandidate(storageRoot)?.path in movedOriginalPaths }
+        }
+        filesByCategory.value = updated
+
+        updated[ReportCategory.LARGE_FILES]?.let { files ->
+            if (_largeFilesState.value is LargeFilesState.Done) {
+                _largeFilesState.value = LargeFilesState.Done(files.size, files.sumOf { it.sizeBytes })
+            }
+        }
+        val oldDownloads = updated[ReportCategory.OLD_DOWNLOADS]
+        val apks = updated[ReportCategory.APKS]
+        if (_downloadsState.value is DownloadsState.Done && oldDownloads != null && apks != null) {
+            _downloadsState.value = DownloadsState.Done(
+                oldFilesCount = oldDownloads.size,
+                oldFilesBytes = oldDownloads.sumOf { it.sizeBytes },
+                apkCount = apks.size,
+                apkBytes = apks.sumOf { it.sizeBytes },
+            )
         }
     }
 }

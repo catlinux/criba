@@ -38,6 +38,38 @@
     <string name="report_category_apks">APKs</string>
     <string name="report_overlap_note">Les categories es poden solapar: el total no compta dos cops el mateix fitxer. Les carpetes buides o sense ús no s\'inclouen al total.</string>
     <string name="report_readonly_note">Criba només llegeix: no esborra res.</string>
+    <string name="review_open_button">Revisa i tria</string>
+    <string name="screenshots_move_blocked">Les captures són imatges: no es poden moure fins que hi hagi una còpia verificada.</string>
+    <string name="review_back">← Torna</string>
+    <string name="review_title">Revisió: %1$s</string>
+    <string name="review_access_explanation">Per moure fitxers a la paperera de Criba cal el permís «Accés a tots els fitxers».</string>
+    <string name="review_access_denied">Sense aquest accés no es poden moure fitxers.</string>
+    <string name="review_access_settings">Obre els ajustos</string>
+    <string name="review_move_button">Mou a la paperera</string>
+    <string name="review_moving">Movent els fitxers a la paperera…</string>
+    <string name="review_select_all">Selecciona tot el que es pugui</string>
+    <string name="review_clear">Treu la selecció</string>
+    <string name="review_needs_backup">Foto, vídeo o àudio: no es pot moure fins que hi hagi una còpia verificada.</string>
+    <string name="review_blocked">Protegit: Criba no el toca.</string>
+    <string name="review_confirmation_error">No s\'ha pogut validar la selecció. Torna-la a revisar.</string>
+    <string name="review_confirmation_note">Es guarden a la paperera de Criba (carpeta oculta) i no s\'esborren definitivament. L\'espai no s\'allibera fins que es buidi la paperera.</string>
+    <string name="review_cancel">Cancel·la</string>
+    <string name="review_result_note">Els fitxers es guarden a la paperera de Criba; no s\'han esborrat definitivament.</string>
+    <string name="review_moved_none">No s\'ha mogut cap fitxer.</string>
+    <string name="review_return_report">Torna a l\'informe</string>
+    <string name="review_error">No s\'ha pogut completar el moviment: %1$s</string>
+    <string name="trash_failure_protected">ruta protegida</string>
+    <string name="trash_failure_not_regular">no és un fitxer regular</string>
+    <string name="trash_failure_symlink">la ruta conté un enllaç simbòlic</string>
+    <string name="trash_failure_missing">el fitxer ja no existeix</string>
+    <string name="trash_failure_changed">el fitxer ha canviat des de l\'anàlisi</string>
+    <string name="trash_failure_different_volume">no es pot moure atòmicament entre volums</string>
+    <string name="trash_failure_target_exists">ja existeix un fitxer amb aquest nom a la paperera</string>
+    <string name="trash_failure_verify">no s\'ha pogut verificar el moviment</string>
+    <string name="trash_failure_outside_trash">el fitxer no és a la paperera de Criba</string>
+    <string name="trash_failure_not_in_trash">el fitxer ja no consta a la paperera</string>
+    <string name="trash_failure_unavailable">la paperera no està disponible</string>
+    <string name="trash_failure_io">error de lectura o moviment</string>
     <plurals name="scan_result">
         <item quantity="one">%1$d fitxer de 100 MB o més ocupa %2$s</item>
         <item quantity="other">%1$d fitxers de 100 MB o més ocupen %2$s</item>
@@ -77,5 +109,25 @@
     <plurals name="report_summary_total">
         <item quantity="one">Fins a %1$s en %2$d fitxer</item>
         <item quantity="other">Fins a %1$s en %2$d fitxers</item>
+    </plurals>
+    <plurals name="review_selection_summary">
+        <item quantity="one">%1$d seleccionat · %2$s</item>
+        <item quantity="other">%1$d seleccionats · %2$s</item>
+    </plurals>
+    <plurals name="review_confirm_title">
+        <item quantity="one">Mou %1$d fitxer (%2$s) a la paperera</item>
+        <item quantity="other">Mou %1$d fitxers (%2$s) a la paperera</item>
+    </plurals>
+    <plurals name="review_more_files">
+        <item quantity="one">i %1$d més</item>
+        <item quantity="other">i %1$d més</item>
+    </plurals>
+    <plurals name="review_moved_result">
+        <item quantity="one">S\'ha mogut %1$d fitxer (%2$s) a la paperera</item>
+        <item quantity="other">S\'han mogut %1$d fitxers (%2$s) a la paperera</item>
+    </plurals>
+    <plurals name="review_failed_count">
+        <item quantity="one">No s\'ha pogut moure %1$d fitxer</item>
+        <item quantity="other">No s\'han pogut moure %1$d fitxers</item>
     </plurals>
 </resources>

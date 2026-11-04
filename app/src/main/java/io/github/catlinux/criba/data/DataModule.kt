@@ -78,5 +78,10 @@ abstract class DataModule {
             val trashRoot = File(Environment.getExternalStorageDirectory(), DeletionPolicy.TRASH_DIRECTORY_NAME)
             return FileTrashManager(FileTrashEngine(trashRoot = trashRoot, log = log, index = index))
         }
+
+        @Provides
+        @Named("storageRoot")
+        @Suppress("DEPRECATION")
+        fun provideStorageRoot(): String = Environment.getExternalStorageDirectory().path
     }
 }

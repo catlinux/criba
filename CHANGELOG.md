@@ -4,6 +4,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 
 ## [Sin publicar]
 
+## [0.12.0] - 2026-11-04
+
+### Añadido
+
+- Pantalla de revisión por categoría para elegir archivos y moverlos a la papelera con confirmación que muestra el número y los MB reales; los archivos multimedia aparecen bloqueados hasta tener copia verificada.
+
 ## [0.11.0] - 2026-11-04
 
 ### Añadido

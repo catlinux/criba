@@ -38,6 +38,38 @@
     <string name="report_category_apks">APKs</string>
     <string name="report_overlap_note">Categories can overlap: the total does not count the same file twice. Empty or unused folders are not included in the total.</string>
     <string name="report_readonly_note">Criba only reads: it deletes nothing.</string>
+    <string name="review_open_button">Review and choose</string>
+    <string name="screenshots_move_blocked">Screenshots are images: they cannot be moved until a verified backup exists.</string>
+    <string name="review_back">← Back</string>
+    <string name="review_title">Review: %1$s</string>
+    <string name="review_access_explanation">Moving files to Criba\'s trash requires the «All files access» permission.</string>
+    <string name="review_access_denied">Files cannot be moved without this access.</string>
+    <string name="review_access_settings">Open settings</string>
+    <string name="review_move_button">Move to trash</string>
+    <string name="review_moving">Moving files to trash…</string>
+    <string name="review_select_all">Select all eligible</string>
+    <string name="review_clear">Clear selection</string>
+    <string name="review_needs_backup">Photo, video or audio: cannot be moved until a verified backup exists.</string>
+    <string name="review_blocked">Protected: Criba will not touch this file.</string>
+    <string name="review_confirmation_error">The selection could not be validated. Review it again.</string>
+    <string name="review_confirmation_note">Files are stored in Criba\'s trash (a hidden folder) and are not permanently deleted. Space is not freed until the trash is emptied.</string>
+    <string name="review_cancel">Cancel</string>
+    <string name="review_result_note">Files are stored in Criba\'s trash; they have not been permanently deleted.</string>
+    <string name="review_moved_none">No files were moved.</string>
+    <string name="review_return_report">Back to report</string>
+    <string name="review_error">The move could not be completed: %1$s</string>
+    <string name="trash_failure_protected">protected path</string>
+    <string name="trash_failure_not_regular">not a regular file</string>
+    <string name="trash_failure_symlink">path contains a symbolic link</string>
+    <string name="trash_failure_missing">file no longer exists</string>
+    <string name="trash_failure_changed">file changed since scanning</string>
+    <string name="trash_failure_different_volume">cannot atomically move across volumes</string>
+    <string name="trash_failure_target_exists">a file with this name already exists in trash</string>
+    <string name="trash_failure_verify">could not verify the move</string>
+    <string name="trash_failure_outside_trash">file is outside Criba\'s trash</string>
+    <string name="trash_failure_not_in_trash">file is no longer indexed in trash</string>
+    <string name="trash_failure_unavailable">trash is unavailable</string>
+    <string name="trash_failure_io">read or move error</string>
     <plurals name="scan_result">
         <item quantity="one">%1$d file of 100 MB or more takes up %2$s</item>
         <item quantity="other">%1$d files of 100 MB or more take up %2$s</item>
@@ -77,5 +109,25 @@
     <plurals name="report_summary_total">
         <item quantity="one">Up to %1$s in %2$d file</item>
         <item quantity="other">Up to %1$s in %2$d files</item>
+    </plurals>
+    <plurals name="review_selection_summary">
+        <item quantity="one">%1$d selected · %2$s</item>
+        <item quantity="other">%1$d selected · %2$s</item>
+    </plurals>
+    <plurals name="review_confirm_title">
+        <item quantity="one">Move %1$d file (%2$s) to trash</item>
+        <item quantity="other">Move %1$d files (%2$s) to trash</item>
+    </plurals>
+    <plurals name="review_more_files">
+        <item quantity="one">and %1$d more</item>
+        <item quantity="other">and %1$d more</item>
+    </plurals>
+    <plurals name="review_moved_result">
+        <item quantity="one">Moved %1$d file (%2$s) to trash</item>
+        <item quantity="other">Moved %1$d files (%2$s) to trash</item>
+    </plurals>
+    <plurals name="review_failed_count">
+        <item quantity="one">Could not move %1$d file</item>
+        <item quantity="other">Could not move %1$d files</item>
     </plurals>
 </resources>
