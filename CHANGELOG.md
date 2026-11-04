@@ -4,6 +4,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 
 ## [Sin publicar]
 
+## [0.17.0] - 2026-11-04
+
+### Añadido
+
+- Modelo y escáner de dominio de duplicados exactos (DuplicatesScanner, KeepPolicy, DuplicateSelection); todavía sin datos reales ni interfaz.
+
 ## [0.16.0] - 2026-11-04
 
 ### Añadido
