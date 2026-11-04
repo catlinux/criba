@@ -14,6 +14,7 @@ import io.github.catlinux.criba.data.db.CribaDatabase
 import io.github.catlinux.criba.data.db.RoomActionLog
 import io.github.catlinux.criba.data.db.RoomTrashIndex
 import io.github.catlinux.criba.data.db.TrashDao
+import io.github.catlinux.criba.data.duplicates.FileContentHasher
 import io.github.catlinux.criba.data.apps.AppOpsUsageAccess
 import io.github.catlinux.criba.data.apps.PackageManagerAppSource
 import io.github.catlinux.criba.data.trash.FileTrashEngine
@@ -21,6 +22,7 @@ import io.github.catlinux.criba.data.trash.FileTrashManager
 import io.github.catlinux.criba.domain.ActionLog
 import io.github.catlinux.criba.domain.ApkInspector
 import io.github.catlinux.criba.domain.AppSource
+import io.github.catlinux.criba.domain.ContentHasher
 import io.github.catlinux.criba.domain.DeletionPolicy
 import io.github.catlinux.criba.domain.FileSource
 import io.github.catlinux.criba.domain.InstalledAppsSource
@@ -56,6 +58,9 @@ abstract class DataModule {
 
     @Binds
     abstract fun bindUsageAccess(impl: AppOpsUsageAccess): UsageAccess
+
+    @Binds
+    abstract fun bindContentHasher(impl: FileContentHasher): ContentHasher
 
     companion object {
         @Provides

@@ -4,6 +4,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 
 ## [Sin publicar]
 
+## [0.18.0] - 2026-11-04
+
+### Añadido
+
+- Hasher SHA-256 de archivos para duplicados, verificación previa al borrado (DuplicateRecheck) e inyección del escáner; todavía sin interfaz.
+
 ## [0.17.0] - 2026-11-04
 
 ### Añadido

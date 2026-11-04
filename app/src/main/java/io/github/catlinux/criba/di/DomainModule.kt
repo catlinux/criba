@@ -8,6 +8,9 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import io.github.catlinux.criba.domain.ApkInspector
 import io.github.catlinux.criba.domain.AppSource
+import io.github.catlinux.criba.domain.ContentHasher
+import io.github.catlinux.criba.domain.DuplicateRecheck
+import io.github.catlinux.criba.domain.DuplicatesScanner
 import io.github.catlinux.criba.domain.FileSource
 import io.github.catlinux.criba.domain.InstalledAppsSource
 import io.github.catlinux.criba.domain.LargeFilesScanner
@@ -42,4 +45,11 @@ object DomainModule {
         source: AppSource,
         @ApplicationContext context: Context,
     ): UnusedAppsScanner = UnusedAppsScanner(source, context.packageName)
+
+    @Provides
+    fun provideDuplicatesScanner(source: FileSource, hasher: ContentHasher): DuplicatesScanner =
+        DuplicatesScanner(source, hasher)
+
+    @Provides
+    fun provideDuplicateRecheck(hasher: ContentHasher): DuplicateRecheck = DuplicateRecheck(hasher)
 }
