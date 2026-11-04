@@ -10,7 +10,7 @@ ui  →  domain  →  data
 
 - **ui**: pantallas Compose, `ViewModel`s (Hilt) y navegación. No accede a Android de bajo nivel.
 - **domain**: modelos y casos de uso en Kotlin puro, sin dependencias de Android siempre que sea posible. Define interfaces (p. ej. `StorageInfoSource`) que implementa `data`.
-- **data**: implementaciones sobre APIs de Android (`MediaStore`, `StorageStatsManager`, `UsageStatsManager`, SAF, Room para registro y papelera).
+- **data**: implementaciones sobre APIs de Android (`MediaStore`, `StorageStatsManager`, `UsageStatsManager`, SAF, Room para registro y papelera). Incluye la base de datos Room `criba.db` con las tablas `action_log` y `trash_item`, esquema exportado en `app/schemas` y sin migración destructiva.
 
 La dependencia apunta siempre hacia abajo; `data` se enlaza con `domain` mediante módulos Hilt (`DataModule`).
 

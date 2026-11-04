@@ -4,6 +4,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 
 ## [Sin publicar]
 
+## [0.10.0] - 2026-11-04
+
+### Añadido
+
+- Registro de acciones y índice de la papelera con Room (nueva dependencia AndroidX, sin red); la app todavía no borra nada.
+
 ## [0.9.0] - 2026-11-04
 
 ### Añadido
