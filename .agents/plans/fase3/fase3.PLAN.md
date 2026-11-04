@@ -13,7 +13,7 @@ Objetivo: mostrar qué apps ocupan más y cuáles no se usan, con cifras medible
 
 ## Pasos (ejecutor: AgentRelay esfuerzo alto; revisión y pruebas en el Pixel: sesión principal)
 
-1. [ ] **Dominio (0.14.0)** · `AppUsageInfo`, `AppSource`, `UnusedAppsScanner` (reloj inyectable, umbral en días, orden por tamaño, motivos), exclusiones y tests exhaustivos (borde del umbral, sin datos, nunca usada, sistema, Criba, orden y desempate).
+1. [x] **Dominio (0.14.0)** · `AppUsageInfo`, `AppSource`, `UnusedAppsScanner` (reloj inyectable, umbral en días, orden por tamaño, motivos), exclusiones y tests exhaustivos (borde del umbral, sin datos, nunca usada, sistema, Criba, orden y desempate).
 2. [ ] **Datos (0.15.0)** · `PackageManager` + `StorageStatsManager` + `UsageStatsManager`, comprobación del acceso de uso (`AppOpsManager`), `<queries>` y `PACKAGE_USAGE_STATS` en el manifiesto, módulo Hilt. Prueba en el Pixel contrastando tamaños con `dumpsys diskstats`/ajustes del sistema.
 3. [ ] **Interfaz y cierre (0.16.0)** · pantalla «Apps» (lista con tamaño desglosado y último uso, candidatas arriba con su motivo), explicación + botón a «Acceso de uso», botón «Abrir ajustes de la app», estados sin permiso/sin datos, enlace desde la pantalla inicial y el informe. Revisión completa en el Pixel.
 
