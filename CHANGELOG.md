@@ -4,6 +4,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 
 ## [Sin publicar]
 
+## [0.9.0] - 2026-11-04
+
+### Añadido
+
+- Política de elegibilidad de borrado (DeletionPolicy) y valor de confirmación ConfirmedDeletion, base de la papelera; la app todavía no borra nada.
+
 ## [0.8.0] - 2026-11-03
 
 ### Añadido
